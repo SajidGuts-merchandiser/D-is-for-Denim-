@@ -1,0 +1,6 @@
+{
+  "name": "DenimIQ - Master Denim Merchandising Academy & Technical Workbench",
+  "description": "Comprehensive interactive platform for denim apparel merchandisers covering fabric processing, yarn spinning & indigo dyeing, 5-pocket sewing engineering, wet & dry wash chemistry, wash recipes, costing calculators, and quality defect troubleshooting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

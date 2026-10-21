@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Lohit Bengali';
+  src: url('/fonts/Lohit-Bengali.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Lohit Bengali', 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+  }
+}
