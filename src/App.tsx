@@ -20,7 +20,7 @@ import { Language, TRANSLATIONS } from './utils/i18n.ts';
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('fabric');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [lang, setLang] = useState<Language>('bn'); // Full page in Bangla by default
+  const [lang, setLang] = useState<Language>('en'); // Full page in English by default
   const [isManualOpen, setIsManualOpen] = useState<boolean>(false);
 
   const t = TRANSLATIONS[lang];

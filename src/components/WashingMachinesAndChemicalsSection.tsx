@@ -153,6 +153,33 @@ const WashingMachineSchematicImage: React.FC<{
             ))}
           </g>
         )}
+
+        {machineType === 'sample-rotary-washer' && (
+          <g>
+            {/* Compact Sample / Rotary Garment Dyeing Drum */}
+            <rect x="75" y="20" width="170" height="106" rx="10" fill="#18181b" stroke="#38bdf8" strokeWidth="2" />
+            <circle cx="160" cy="74" r="38" fill="#09090b" stroke="#a1a1aa" strokeWidth="2.5" />
+            <circle cx="160" cy="74" r="30" fill="#18181b" stroke="#f43f5e" strokeWidth="1.5" strokeDasharray="4 3" />
+            {/* Dye Bath & Bidirectional Arrows */}
+            <path d="M 132,78 Q 160,68 188,78 L 184,98 Q 160,106 136,98 Z" fill="#e11d48" fillOpacity="0.45" />
+            <path d="M 142,58 A 20,20 0 0 1 178,58" fill="none" stroke="#38bdf8" strokeWidth="2" />
+            <rect x="90" y="28" width="32" height="12" rx="2" fill="#27272a" stroke="#10b981" strokeWidth="1" />
+          </g>
+        )}
+
+        {machineType === 'pp-spray-booth' && (
+          <g>
+            {/* Negative-Pressure Spray Booth with Water-Curtain Scrubber */}
+            <rect x="45" y="16" width="230" height="112" rx="6" fill="#18181b" stroke="#71717a" strokeWidth="2" />
+            {/* Rear Cascading Water Curtain */}
+            <rect x="195" y="24" width="65" height="96" rx="4" fill="#0284c7" fillOpacity="0.25" stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3 3" />
+            {/* Inflatable Air Dummy with Jeans */}
+            <path d="M 95,40 L 145,40 L 142,116 L 124,116 L 120,68 L 116,116 L 98,116 Z" fill="#1e3a8a" stroke="#60a5fa" strokeWidth="1.5" />
+            {/* PP Pink Mist Spray Cone */}
+            <polygon points="58,68 112,52 112,88" fill="#ec4899" fillOpacity="0.35" stroke="#f472b6" strokeWidth="1.2" strokeDasharray="2 2" />
+            <rect x="48" y="64" width="12" height="10" rx="2" fill="#f59e0b" />
+          </g>
+        )}
       </svg>
 
       {/* Bottom Label */}
@@ -165,7 +192,7 @@ const WashingMachineSchematicImage: React.FC<{
 };
 
 /**
- * Renders a visual chemical vessel / swatch graphic for each of the 8 washing chemicals
+ * Renders a visual chemical vessel / swatch graphic for each of the washing chemicals
  */
 const ChemicalVesselGraphic: React.FC<{
   chem: WashingChemicalSpec;
@@ -218,8 +245,8 @@ export const WashingMachinesAndChemicalsSection: React.FC<WashingMachinesAndChem
             </div>
             <h3 className="text-lg sm:text-xl font-extrabold text-zinc-100 mt-0.5">
               {lang === 'bn'
-                ? '৭টি প্রধান ডেনিম ওয়াশিং ও ড্রাই ফিনিশিং মেশিন: কার্যপ্রণালী ও অসুবিধা'
-                : '7 Core Denim Washing & Dry Finishing Machines: Operation & Disadvantages'}
+                ? '৯টি প্রধান ডেনিম ওয়াশিং, ডাইং ও ড্রাই ফিনিশিং মেশিন: কার্যপ্রণালী ও অসুবিধা'
+                : '9 Core Denim Washing, Dyeing & Dry Finishing Machines: Operation & Disadvantages'}
             </h3>
             <p className="text-xs text-zinc-400 mt-0.5">
               {lang === 'bn'
@@ -310,7 +337,7 @@ export const WashingMachinesAndChemicalsSection: React.FC<WashingMachinesAndChem
           </div>
         )}
 
-        {/* 7 Washing Machine Cards Grid */}
+        {/* 9 Washing Machine Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {WASHING_MACHINES_DATA.map((wm, idx) => (
             <div
@@ -397,25 +424,25 @@ export const WashingMachinesAndChemicalsSection: React.FC<WashingMachinesAndChem
         </div>
       </section>
 
-      {/* PART 2: Washing Chemicals Encyclopedia (8 Core Laundry Chemicals) */}
+      {/* PART 2: Washing Chemicals & Textile Auxiliaries Encyclopedia (14 Core Laundry Chemicals) */}
       <section className="bg-zinc-900 rounded-2xl border border-zinc-800 p-5 sm:p-6 shadow-xl space-y-5">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-zinc-800">
           <div>
             <div className="text-xs font-mono text-emerald-400 font-semibold flex items-center gap-1.5">
               <FlaskConical className="w-4 h-4" />
               {lang === 'bn'
-                ? 'ডেনিম ওয়াশিং কেমিক্যাল এনসাইক্লোপিডিয়া (Washing Chemicals)'
-                : 'Denim Washing Chemicals Encyclopedia (Function, Dosing & Hazards)'}
+                ? 'ডেনিম ওয়াশিং কেমিক্যাল ও টেক্সটাইল অক্সিলিয়ারিজ এনসাইক্লোপিডিয়া'
+                : 'Denim Washing Chemicals & Textile Auxiliaries Encyclopedia (14 Core Agents)'}
             </div>
             <h3 className="text-lg sm:text-xl font-extrabold text-zinc-100 mt-0.5">
               {lang === 'bn'
-                ? '৮টি অপরিহার্য লন্ড্রি কেমিক্যাল: কী কাজ করে, ব্যবহারের নিয়ম ও ক্ষতিকর দিক'
-                : '8 Essential Denim Laundry Chemicals: What They Do, Operation & Disadvantages'}
+                ? '১৪টি অপরিহার্য লন্ড্রি কেমিক্যাল ও অক্সিলিয়ারিজ: কী কাজ করে, ব্যবহারের নিয়ম ও ক্ষতিকর দিক'
+                : '14 Essential Denim Laundry Chemicals & Auxiliaries: Function, Operation & Disadvantages'}
             </h3>
             <p className="text-xs text-zinc-400 mt-0.5">
               {lang === 'bn'
-                ? 'ডি-সাইজিং অ্যামাইলেজ থেকে শুরু করে সেলুলেজ এনজাইম, পিউমিস স্টোন, ক্লোরিন ব্লিচ, পিপি, মেটাবাইসালফাইট এবং সিলিকন সফটনারের পূর্ণাঙ্গ গাইড'
-                : 'Complete chemical guide covering Alpha-Amylase, Cellulase, Pumice Stones, NaOCl Bleach, KMnO4, Sodium Metabisulfite, Anti-Backstaining, and Softeners'}
+                ? 'অ্যামাইলেজ, সেলুলেজ, পিউমিস স্টোন, ক্লোরিন ও পারঅক্সাইড ব্লিচ, পিপি, মেটাবাইসালফাইট, কস্টিক সোডা, ইডিটিএ, ওবিএ, ক্যাটানাইজার ও সফটনারের পূর্ণাঙ্গ গাইড'
+                : 'Complete chemical guide covering Enzymes, Pumice Stones, NaOCl & H2O2 Bleaches, KMnO4, Neutralizers, Alkalis, EDTA Chelators, OBA, Dye Fixers & Softeners'}
             </p>
           </div>
 
@@ -445,7 +472,7 @@ export const WashingMachinesAndChemicalsSection: React.FC<WashingMachinesAndChem
                   }`}
                 >
                   {hz === 'All'
-                    ? lang === 'bn' ? 'সব (৮)' : 'All (8)'
+                    ? lang === 'bn' ? 'সব (১৪)' : 'All (14)'
                     : hz}
                 </button>
               ))}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   WASH_TYPES,
   WashType,
@@ -15,11 +15,13 @@ import {
   ShieldCheck,
   Filter,
   FileDown,
+  Sliders,
 } from 'lucide-react';
 import { exportAndDownloadTechPackPdf } from '../utils/pdfExport.ts';
 import { Language, TRANSLATIONS } from '../utils/i18n.ts';
 
 import { WashTexturePreview } from './WashTexturePreview.tsx';
+import { InteractiveWashVisualizer } from './InteractiveWashVisualizer.tsx';
 
 interface WashTypesCatalogProps {
   searchQuery?: string;
@@ -28,12 +30,19 @@ interface WashTypesCatalogProps {
 
 export const WashTypesCatalog: React.FC<WashTypesCatalogProps> = ({
   searchQuery = '',
-  lang = 'bn',
+  lang = 'en',
 }) => {
   const t = TRANSLATIONS[lang];
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedEim, setSelectedEim] = useState<string>('All');
   const [activeRecipeModal, setActiveRecipeModal] = useState<WashType | null>(null);
+  const [visualizerPresetId, setVisualizerPresetId] = useState<string>('mid-stone-enzyme');
+  const visualizerTopRef = useRef<HTMLDivElement | null>(null);
+
+  const handleLoadInVisualizer = (washId: string) => {
+    setVisualizerPresetId(washId);
+    visualizerTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const handleExportSingleRecipePdf = (wash: WashType) => {
     exportAndDownloadTechPackPdf({
@@ -106,27 +115,36 @@ export const WashTypesCatalog: React.FC<WashTypesCatalogProps> = ({
   });
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       {/* Compact Banner */}
       <div className="relative overflow-hidden rounded-2xl bg-zinc-900 p-4 md:p-5 border border-zinc-800 shadow-lg">
         <div className="relative z-10 max-w-3xl">
           <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md bg-zinc-950 border border-zinc-700 text-amber-400 text-[11px] font-semibold mb-2">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             {lang === 'bn'
-              ? 'মডিউল ৪: কমার্শিয়াল ওয়াশ ক্যাটালগ ও কী-স্টেপস ফ্লো'
-              : 'Module 4: Commercial Wash Directory & Key Steps Flow'}
+              ? 'মডিউল ৪: ইন্টারঅ্যাক্টিভ ওয়াশ ভিজ্যুয়ালাইজার ও কমার্শিয়াল ওয়াশ ক্যাটালগ'
+              : 'Module 4: Interactive Wash Visualizer & Commercial Wash Directory'}
           </div>
           <h2 className="text-xl md:text-2xl font-extrabold text-zinc-100 tracking-tight">
             {lang === 'bn'
-              ? '৮টি প্রধান ডেনিম ওয়াশের সংক্ষিপ্ত কী-স্টেপস ও কেমিক্যাল রেসিপি'
-              : '8 Essential Denim Washes with Concise Key Steps & Chemical Recipes'}
+              ? 'ইন্টারঅ্যাক্টিভ ওয়াশ ভিজ্যুয়ালাইজার এবং ৮টি প্রধান ডেনিম ওয়াশের রেসিপি'
+              : 'Interactive Denim Wash Visualizer & 8 Essential Wash Recipes'}
           </h2>
           <p className="mt-1 text-xs text-zinc-400 leading-relaxed">
             {lang === 'bn'
-              ? 'ইন্ডাস্ট্রিয়াল লন্ড্রি প্রাকটিস অনুযায়ী প্রতিটি ওয়াশের নিচে সংক্ষিপ্ত "KEY STEPS" (০১ → ০২ → ০৩...) ফ্লো স্ট্রিপ, এফওবি (FOB) খরচ এবং সুনির্দিষ্ট কাপড়ের স্পেসিফিকেশন দেওয়া হলো।'
-              : 'Each commercial wash card features a concise numbered "KEY STEPS" flow strip, FOB benchmark cost, and fabric suitability.'}
+              ? 'স্টোন ওয়াশ, ব্লিচ, এনজাইম ও লেজার প্যারামিটার পরিবর্তন করে রিয়েল-টাইমে ওয়াশ ফিনিশ দেখুন এবং প্রতিটি ওয়াশের সংক্ষিপ্ত "KEY STEPS" ফ্লো ও এফওবি (FOB) রেসিপি যাচাই করুন।'
+              : 'Simulate realistic denim wash finishes in real time by adjusting stone wash, bleach, enzyme, and laser parameters, or inspect full industrial recipes below.'}
           </p>
         </div>
+      </div>
+
+      {/* Interactive Wash Visualizer Studio */}
+      <div ref={visualizerTopRef}>
+        <InteractiveWashVisualizer
+          lang={lang}
+          selectedPresetId={visualizerPresetId}
+          onSelectWashPreset={setVisualizerPresetId}
+        />
       </div>
 
       {/* Filter Bar */}
@@ -179,10 +197,15 @@ export const WashTypesCatalog: React.FC<WashTypesCatalogProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {filteredWashes.map((wash) => {
           const conciseSteps = getConciseKeyStepsForWash(wash.id, lang);
+          const isVisualized = visualizerPresetId === wash.id;
           return (
             <div
               key={wash.id}
-              className="bg-zinc-900 rounded-2xl border border-zinc-800 overflow-hidden flex flex-col justify-between hover:border-zinc-700 hover:shadow-xl transition-all group"
+              className={`bg-zinc-900 rounded-2xl border overflow-hidden flex flex-col justify-between transition-all group ${
+                isVisualized
+                  ? 'border-amber-500/70 shadow-xl'
+                  : 'border-zinc-800 hover:border-zinc-700 hover:shadow-xl'
+              }`}
             >
               <div>
                 {/* Realistic Wash Texture Swatch Header */}
@@ -265,22 +288,43 @@ export const WashTypesCatalog: React.FC<WashTypesCatalogProps> = ({
               </div>
 
               {/* Action Buttons */}
-              <div className="p-5 pt-0 flex gap-2">
+              <div className="p-5 pt-0 space-y-2">
                 <button
-                  onClick={() => setActiveRecipeModal(wash)}
-                  className="flex-1 py-2.5 px-3 bg-zinc-950 hover:bg-zinc-100 text-zinc-200 hover:text-zinc-950 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 border border-zinc-700 transition-all cursor-pointer"
+                  onClick={() => handleLoadInVisualizer(wash.id)}
+                  className={`w-full py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 border transition-all cursor-pointer ${
+                    isVisualized
+                      ? 'bg-amber-500 text-zinc-950 border-amber-400'
+                      : 'bg-zinc-950 hover:bg-amber-500/15 text-amber-400 border-amber-500/30'
+                  }`}
                 >
-                  <FileText className="w-3.5 h-3.5" />
-                  <span>{t.actions.viewRecipe}</span>
+                  <Sliders className="w-3.5 h-3.5" />
+                  <span>
+                    {lang === 'bn'
+                      ? isVisualized
+                        ? 'ভিজ্যুয়ালাইজারে সক্রিয়'
+                        : 'ভিজ্যুয়ালাইজারে লোড করুন'
+                      : isVisualized
+                      ? 'Active in Visualizer'
+                      : 'Simulate in Wash Visualizer'}
+                  </span>
                 </button>
-                <button
-                  onClick={() => handleExportSingleRecipePdf(wash)}
-                  className="py-2.5 px-3 bg-zinc-950 hover:bg-amber-500 text-zinc-300 hover:text-zinc-950 rounded-xl text-xs font-bold flex items-center justify-center gap-1 border border-zinc-700 hover:border-amber-400 transition-all cursor-pointer shadow-xs"
-                  title="Export Recipe as PDF"
-                >
-                  <FileDown className="w-3.5 h-3.5" />
-                  <span className="text-[10px]">PDF</span>
-                </button>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => setActiveRecipeModal(wash)}
+                    className="flex-1 py-2 px-3 bg-zinc-950 hover:bg-zinc-100 text-zinc-200 hover:text-zinc-950 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 border border-zinc-700 transition-all cursor-pointer"
+                  >
+                    <FileText className="w-3.5 h-3.5" />
+                    <span>{t.actions.viewRecipe}</span>
+                  </button>
+                  <button
+                    onClick={() => handleExportSingleRecipePdf(wash)}
+                    className="py-2 px-3 bg-zinc-950 hover:bg-amber-500 text-zinc-300 hover:text-zinc-950 rounded-xl text-xs font-bold flex items-center justify-center gap-1 border border-zinc-700 hover:border-amber-400 transition-all cursor-pointer shadow-xs"
+                    title="Export Recipe as PDF"
+                  >
+                    <FileDown className="w-3.5 h-3.5" />
+                    <span className="text-[10px]">PDF</span>
+                  </button>
+                </div>
               </div>
             </div>
           );

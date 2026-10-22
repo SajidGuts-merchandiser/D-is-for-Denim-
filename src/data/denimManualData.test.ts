@@ -21,6 +21,10 @@ import {
   calculateMachineHourlyOutput,
   filterMerchandiserTips,
 } from './machinesAndChemicalsData.ts';
+import {
+  WASH_VISUALIZER_PRESETS,
+  computeWashOpticalProfile,
+} from '../utils/washVisualizerEngine.ts';
 
 test('CONCISE_10_FABRIC_STEPS contains all 10 steps from Cleaning (01) to Packing (10)', () => {
   assert.equal(CONCISE_10_FABRIC_STEPS.length, 10);
@@ -63,7 +67,7 @@ test('Sewing, Dry Process, Acid/Ice/Cloud & Garment Dye matrices are complete', 
   assert.equal(WEAVE_AND_VARIATIONS.length, 8);
   assert.equal(FIT_SILHOUETTES.length, 6);
   assert.equal(SPECIALIZED_MACHINES_CONCISE.length, 7);
-  assert.equal(CONCISE_DRY_PROCESSES.length, 8);
+  assert.equal(CONCISE_DRY_PROCESSES.length, 10);
   assert.equal(ACID_ICE_CLOUD_MATRIX.length, 3);
   assert.equal(GARMENT_DYE_MATRIX.length, 4);
 });
@@ -78,7 +82,7 @@ test('SEWING_MACHINES_AND_VIDEOS and WASHING_MACHINES_DATA have YouTube links an
     assert.ok(m.disadvantagesBn.length >= 2 && m.disadvantagesEn.length >= 2);
   }
 
-  assert.equal(WASHING_MACHINES_DATA.length, 7);
+  assert.equal(WASHING_MACHINES_DATA.length, 9);
   for (const wm of WASHING_MACHINES_DATA) {
     assert.ok(wm.youtubeUrl.startsWith('https://www.youtube.com/'));
     assert.ok(wm.youtubeEmbedId.length > 3);
@@ -89,12 +93,12 @@ test('SEWING_MACHINES_AND_VIDEOS and WASHING_MACHINES_DATA have YouTube links an
 });
 
 test('WASHING_CHEMICALS_DATA and filterWashingChemicals filter by query and hazard level', () => {
-  assert.equal(WASHING_CHEMICALS_DATA.length, 8);
+  assert.equal(WASHING_CHEMICALS_DATA.length, 14);
   const ecoList = filterWashingChemicals('', 'Low (Bio)');
-  assert.ok(ecoList.length >= 2);
+  assert.ok(ecoList.length >= 4);
   const permanganate = filterWashingChemicals('KMnO4', 'All');
-  assert.equal(permanganate.length, 1);
-  assert.equal(permanganate[0].code, 'CHEM-05');
+  assert.ok(permanganate.length >= 1);
+  assert.ok(permanganate.some((c) => c.code === 'CHEM-05'));
 });
 
 test('calculateMachineHourlyOutput and filterMerchandiserTips work accurately', () => {
@@ -107,7 +111,29 @@ test('calculateMachineHourlyOutput and filterMerchandiserTips work accurately', 
   assert.equal(hourly.stitchesPerSeam, 288);
   assert.ok(hourly.piecesPerHourAt85Eff > 150);
 
-  assert.equal(DEV_VS_BULK_MERCHANDISER_TIPS.length, 5);
+  assert.equal(DEV_VS_BULK_MERCHANDISER_TIPS.length, 8);
   const washTips = filterMerchandiserTips('washing', '');
-  assert.ok(washTips.length >= 1);
+  assert.ok(washTips.length >= 2);
+});
+
+test('computeWashOpticalProfile calculates shade retention, tear strength, FOB cost, and EIM score', () => {
+  const rawProfile = computeWashOpticalProfile({
+    ...WASH_VISUALIZER_PRESETS['raw-rigid'],
+    garmentType: 'jeans',
+    compareSplitPct: 0,
+    zoomMacro: false,
+  });
+  const heavyBleachProfile = computeWashOpticalProfile({
+    ...WASH_VISUALIZER_PRESETS['bleach-ice-wash'],
+    garmentType: 'jeans',
+    compareSplitPct: 0,
+    zoomMacro: false,
+  });
+
+  assert.equal(rawProfile.indigoRetentionPct, 100);
+  assert.equal(rawProfile.tearStrengthRetentionPct, 100);
+  assert.ok(heavyBleachProfile.indigoRetentionPct < rawProfile.indigoRetentionPct);
+  assert.ok(heavyBleachProfile.tearStrengthRetentionPct < rawProfile.tearStrengthRetentionPct);
+  assert.ok(heavyBleachProfile.estimatedWashFobUsd > rawProfile.estimatedWashFobUsd);
+  assert.ok(heavyBleachProfile.riskAlertEn !== null);
 });

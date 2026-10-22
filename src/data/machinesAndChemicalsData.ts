@@ -30,7 +30,16 @@ export interface WashingMachineSpec {
   code: string;
   nameEn: string;
   nameBn: string;
-  machineType: 'belly-washer' | 'front-washer' | 'hydro-extractor' | 'tumble-dryer' | 'laser-system' | 'ozone-cabinet' | 'curing-oven';
+  machineType:
+    | 'belly-washer'
+    | 'front-washer'
+    | 'hydro-extractor'
+    | 'tumble-dryer'
+    | 'laser-system'
+    | 'ozone-cabinet'
+    | 'curing-oven'
+    | 'sample-rotary-washer'
+    | 'pp-spray-booth';
   capacityKg: string;
   speedOrTemp: string;
   liquorRatio: string;
@@ -281,33 +290,33 @@ export const SEWING_MACHINES_AND_VIDEOS: SewingMachineVideoSpec[] = [
   },
 ];
 
-// 2. 7 Industrial Washing Machines (Wet & Dry Laundry Equipment)
+// 2. 9 Industrial Washing & Dry Finishing Machines (Wet & Dry Laundry Equipment)
 export const WASHING_MACHINES_DATA: WashingMachineSpec[] = [
   {
     id: 'belly-washer',
     code: 'W-MC-01',
-    nameEn: 'Side-Loading Belly / Paddle Washing Machine',
-    nameBn: 'সাইড-লোডিং বেলি / প্যাডেল ওয়াশিং মেশিন',
+    nameEn: 'Side-Loading Belly / Open-Pocket Washing Machine',
+    nameBn: 'সাইড-লোডিং বেলি / ওপেন-পকেট ওয়াশিং মেশিন',
     machineType: 'belly-washer',
-    capacityKg: '100 – 250 kg / batch',
-    speedOrTemp: '22 – 32 RPM • Up to 85°C',
+    capacityKg: '100 – 300 kg / batch',
+    speedOrTemp: '22 – 32 RPM • Up to 90°C',
     liquorRatio: '1:8 to 1:12 (High Water)',
     youtubeUrl: 'https://www.youtube.com/results?search_query=Industrial+Denim+Belly+Washing+Machine+Stone+Wash+Process',
     youtubeEmbedId: 'M7lc1UVf-VE',
     videoTitleEn: 'Industrial Belly Washer Pumice Stone & Enzyme Washing Process',
     videoTitleBn: 'ইন্ডাস্ট্রিয়াল বেলি ওয়াশিং মেশিনে স্টোন ও এনজাইম ওয়াশ ভিডিও',
     whatItDoesEn:
-      'Executes heavy-duty desizing, stone washing, enzyme abrasion, chlorine bleaching, and neutralization for large bulk batches (150–300 jeans per load).',
+      'Executes heavy-duty desizing, pumice stone washing, enzyme abrasion, chlorine/peroxide bleaching, caustic washing, and neutralization for large bulk batches (150–300 jeans per load).',
     whatItDoesBn:
-      'একবারে ১৫০–৩০০টি জিন্সের বড় ব্যাচে ডি-সাইজিং, স্টোন ওয়াশ, এনজাইম অ্যাব্রেশন, ব্লিচিং এবং নিউট্রালাইজেশন সম্পন্ন করে।',
+      'একবারে ১৫০–৩০০টি জিন্সের বড় ব্যাচে ডি-সাইজিং, পিউমিস স্টোন ওয়াশ, এনজাইম অ্যাব্রেশন, ব্লিচিং, কস্টিক ওয়াশ এবং নিউট্রালাইজেশন সম্পন্ন করে।',
     howOperatedEn:
-      'Garments and volcanic pumice stones are loaded through the horizontal side door into a perforated stainless-steel inner drum that rotates forward and reverse inside an outer water-filled belly tank heated by direct steam.',
+      'Garments and volcanic pumice stones (½ weight of garments) are loaded through mechanically interlocked stainless-steel side doors into a horizontal perforated inner drum driven by a heavy-duty V-belt gear motor with auto-timed forward/reverse agitation, gauge glass water-level indicator, and direct steam heating.',
     howOperatedBn:
-      'সামনের আনুভূমিক দরজা দিয়ে কাপড় ও পিউমিস স্টোন ছিদ্রযুক্ত স্টেইনলেস স্টিলের ড্রামে ভরা হয়; ড্রামটি গরম পানি ও কেমিক্যাল ভরা বাইরের ট্যাংকের ভেতর ঘড়ির কাঁটার দিকে ও বিপরীতে ঘুরতে থাকে।',
+      'মেকানিক্যালি ইন্টারলকড স্টেইনলেস স্টিলের আনুভূমিক দরজা দিয়ে কাপড় ও পিউমিস স্টোন ছিদ্রযুক্ত ড্রামে ভরা হয়; অটো-রিভার্স গিয়ার মোটর, ওয়াটার লেভেল গজ গ্লাস এবং ডিরেক্ট স্টিম হিটিংয়ের মাধ্যমে এটি ঘড়ির কাঁটার দিকে ও বিপরীতে ঘুরে ওয়াশ সম্পন্ন করে।',
     disadvantagesEn:
-      '1. High water and steam consumption (liquor ratio 1:10). 2. Heavy pumice stone battering pits the steel drum and can cause long vertical crease streaks if overloaded.',
+      '1. High water and steam consumption (liquor ratio 1:8–1:12). 2. Heavy pumice stone battering pits the steel drum and causes long crease streaks if overloaded or run at too low M:L ratio.',
     disadvantagesBn:
-      '১. পানি ও স্টিম খরচ অনেক বেশি (লিক্যার রেশিও ১:১০)। ২. পাথরের অনবরত আঘাতে ড্রাম ক্ষয় হয় এবং অতিরিক্ত কাপড় দিলে লম্বালম্বি ক্রিস মার্ক (Crease mark) পড়ে।',
+      '১. পানি ও স্টিম খরচ অনেক বেশি (লিক্যার রেশিও ১:৮–১:১২)। ২. পাথরের অনবরত আঘাতে ড্রাম ক্ষয় হয় এবং অতিরিক্ত কাপড় বা কম পানিতে চালালে লম্বালম্বি ক্রিস মার্ক (Crease mark) পড়ে।',
   },
   {
     id: 'front-washer',
@@ -316,24 +325,24 @@ export const WASHING_MACHINES_DATA: WashingMachineSpec[] = [
     nameBn: 'ফ্রন্ট-লোডিং ইকো-জেট ও রোটারি ওয়াশার',
     machineType: 'front-washer',
     capacityKg: '60 – 180 kg / batch',
-    speedOrTemp: '30 – 45 RPM (G-Force Control)',
+    speedOrTemp: '10 – 45 RPM (Auto-Reverse & Extract)',
     liquorRatio: '1:3 to 1:5 (Low Liquor)',
     youtubeUrl: 'https://www.youtube.com/results?search_query=Tonello+Jeanologia+Eco+Front+Loading+Denim+Washing+Machine',
     youtubeEmbedId: 'M7lc1UVf-VE',
     videoTitleEn: 'Low-Liquor Smart Rotary Jet Washer & Nebulized Enzyme Process',
     videoTitleBn: 'ফ্রন্ট-লোডিং ইকো-জেট মেশিনে কম পানিতে মিস্ট এনজাইম ওয়াশ ভিডিও',
     whatItDoesEn:
-      'Performs low-water nebulized enzyme washing, precision tinting/overdyeing, and computer-programmed recipe baths with minimal water waste.',
+      'Uses gravity and side-mounted baffles (without a central agitator) for low-water nebulized enzyme washing, stone washing, and high-temperature rotary garment dyeing.',
     whatItDoesBn:
-      'কম পানিতে (Low Liquor) মিস্ট এনজাইম ওয়াশ, নিখুঁত টিন্টিং বা ওভারডাইং এবং কম্পিউটার নিয়ন্ত্রিত ওয়াশ রেসিপি পরিচালনা করে।',
+      'গ্র্যাভিটি ও সাইড-বাফেল ব্যবহার করে কম পানিতে (Low Liquor) মিস্ট এনজাইম ওয়াশ, স্টোন ওয়াশ এবং রোটারি গার্মেন্টস ডাইং পরিচালনা করে।',
     howOperatedEn:
-      'Loaded via a large front circular glass/steel hatch; high-pressure recirculation nozzles spray atomized chemical mist directly onto tumbling garments while PLC sensors regulate pH, temperature, and dosing tanks automatically.',
+      'Loaded via a large toughened-glass front door that locks mechanically during the cycle; features separate wash/extract motors, electrically operated water and steam valves, auto water-level control, and high-pressure jet nozzles controlled by a PCB/PLC program.',
     howOperatedBn:
-      'সামনের গোলাকার দরজা দিয়ে কাপড় লোড করার পর হাই-প্রেসার জেট নজল দিয়ে কেমিক্যাল মিস্ট স্প্রে করা হয় এবং পিএলসি (PLC) কম্পিউটার স্বয়ংক্রিয়ভাবে তাপমাত্রা ও pH নিয়ন্ত্রণ করে।',
+      'সামনের টাফেনড গ্লাসের বড় দরজা দিয়ে কাপড় লোড করার পর দরজাটি স্বয়ংক্রিয়ভাবে লক হয়ে যায়; এতে ওয়াশ ও এক্সট্রাক্টের জন্য আলাদা মোটর, অটো ওয়াটার লেভেল কন্ট্রোল এবং পিএলসি (PLC) নিয়ন্ত্রিত হাই-প্রেসার জেট নজল থাকে।',
     disadvantagesEn:
-      '1. High capital cost ($65,000–$120,000 per machine). 2. Spray nozzles clog easily if pumice stone dust or lint is not filtered every shift.',
+      '1. High capital investment ($65,000–$120,000 per machine). 2. Spray nozzles and drain pumps clog easily if pumice stone grit or lint is not filtered every shift.',
     disadvantagesBn:
-      '১. মেশিনের দাম অত্যন্ত বেশি ($৬৫,০০০–$১,২০,০০০)। ২. পাথরের গুঁড়ো বা সুতার আঁশ ফিল্টার না করলে স্প্রে নজল দ্রুত ব্লক হয়ে যায়।',
+      '১. মেশিনের প্রাথমিক দাম অত্যন্ত বেশি ($৬৫,০০০–$১,২০,০০০)। ২. পাথরের গুঁড়ো বা সুতার আঁশ ফিল্টার না করলে স্প্রে নজল ও পাম্প দ্রুত ব্লক হয়ে যায়।',
   },
   {
     id: 'hydro-extractor',
@@ -342,76 +351,76 @@ export const WASHING_MACHINES_DATA: WashingMachineSpec[] = [
     nameBn: 'সেন্ট্রিফিউগাল হাইড্রো এক্সট্রাক্টর (পানি ঝরানো মেশিন)',
     machineType: 'hydro-extractor',
     capacityKg: '100 – 200 kg / load',
-    speedOrTemp: '950 – 1,200 RPM (High G-Force)',
+    speedOrTemp: '800 – 1,600 RPM • 2–5 min',
     liquorRatio: 'Extracts 70%–75% moisture',
     youtubeUrl: 'https://www.youtube.com/results?search_query=Industrial+Hydro+Extractor+Machine+Garment+Washing+Plant',
     youtubeEmbedId: 'M7lc1UVf-VE',
     videoTitleEn: 'High-RPM Centrifugal Hydro Extractor Dewatering in Denim Laundry',
     videoTitleBn: 'হাইড্রো এক্সট্রাক্টর মেশিনে উচ্চ গতিতে ডেনিমের পানি নিষ্কাশন ভিডিও',
     whatItDoesEn:
-      'Rapidly spins soaked jeans after wet washing to fling out 70%–75% of absorbed water before tumble drying, cutting dryer energy time in half.',
+      'Spins wet garments at 800–1,600 RPM immediately after softening to squeeze out excess water via centrifugal force, slashing tumble dryer time and energy consumption by half.',
     whatItDoesBn:
-      'ওয়েট ওয়াশের পর ভেজা জিন্সকে প্রচণ্ড গতিতে ঘুরিয়ে ৭০%–৭৫% পানি বের করে দেয়, ফলে ড্রায়ারে শুকানোর সময় ও গ্যাস খরচ অর্ধেক কমে যায়।',
+      'সফটনিং ওয়াশের পর ভেজা জিন্সকে ৮০০–১,৬০০ RPM গতিতে ঘুরিয়ে সেন্ট্রিফিউগাল শক্তির মাধ্যমে ৭০%–৭৫% অতিরিক্ত পানি বের করে দেয়, ফলে ড্রায়ারে শুকানোর সময় ও শক্তি খরচ অর্ধেক কমে যায়।',
     howOperatedEn:
-      'Wet jeans are packed evenly around the vertical perforated basket and covered with a safety net; the heavy cast-iron base spins at 1,000+ RPM for 5–8 minutes using centrifugal force.',
+      'Wet garments are packed symmetrically around the vertical perforated stainless-steel inner drum and secured with a top safety cover; the drum spins at 800–1,600 RPM for 2–4 minutes while extracted water flings outward and exits through the bottom drainpipe.',
     howOperatedBn:
-      'ভেজা প্যান্টগুলো খাড়া ছিদ্রযুক্ত বাস্কেটে সমানভাবে সাজিয়ে সেফটি নেট দিয়ে ঢেকে দেওয়া হয়; এরপর ১০০০+ RPM গতিতে ৫–৮ মিনিট ঘুরিয়ে সেন্ট্রিফিউগাল শক্তিতে পানি নিষ্কাশন করা হয়।',
+      'ভেজা প্যান্টগুলো খাড়া ছিদ্রযুক্ত স্টেইনলেস স্টিলের ড্রামে সমানভাবে সাজিয়ে সেফটি কভার দিয়ে ঢেকে দেওয়া হয়; এরপর ৮০০–১,৬০০ RPM গতিতে ২–৪ মিনিট ঘুরিয়ে নিষ্কাশিত পানি নিচের ড্রেইন পাইপ দিয়ে বের করে দেওয়া হয়।',
     disadvantagesEn:
-      '1. Over-spinning or uneven loading presses sharp "crow’s feet" / hydro crease marks into dark indigo jeans. 2. Severe mechanical vibration if the load is unbalanced.',
+      '1. Over-spinning (>5 min) or uneven loading presses sharp hydro crease marks into dark/rigid denim. 2. Severe mechanical vibration if garment bundles are unbalanced.',
     disadvantagesBn:
-      '১. অতিরিক্ত সময় ঘোরালে গাঢ় নীল ও রিজিড ডেনিমে স্থায়ী ভাঁজ বা ক্রিস দাগ (Hydro crease) বসে যায়। ২. কাপড় সমানভাবে না রাখলে মেশিনে প্রচণ্ড ভাইব্রেশন ও দুর্ঘটনা ঘটতে পারে।',
+      '১. অতিরিক্ত সময় (>৫ মিনিট) ঘোরালে গাঢ় নীল ও রিজিড ডেনিমে স্থায়ী ভাঁজ বা ক্রিস দাগ (Hydro crease) বসে যায়। ২. কাপড় সমানভাবে না রাখলে মেশিনে প্রচণ্ড ভাইব্রেশন ও দুর্ঘটনা ঘটতে পারে।',
   },
   {
     id: 'tumble-dryer',
     code: 'W-MC-04',
-    nameEn: 'Industrial Steam / Gas Reversing Tumble Dryer',
-    nameBn: 'ইন্ডাস্ট্রিয়াল স্টিম / গ্যাস টাম্বল ড্রায়ার',
+    nameEn: 'Industrial Steam vs. Gas Reversing Tumble Dryer',
+    nameBn: 'ইন্ডাস্ট্রিয়াল স্টিম ও গ্যাস রিভার্সিং টাম্বল ড্রায়ার',
     machineType: 'tumble-dryer',
     capacityKg: '100 – 150 kg / batch',
-    speedOrTemp: '60°C – 85°C • 35–50 min',
-    liquorRatio: '0% Moisture Target',
+    speedOrTemp: 'Steam 60–70°C (40–50m) | Gas 70–85°C (30–35m)',
+    liquorRatio: '+ 10–15 min Cold Dry Cycle',
     youtubeUrl: 'https://www.youtube.com/results?search_query=Industrial+Tumble+Dryer+Denim+Jeans+Washing+Plant',
     youtubeEmbedId: 'M7lc1UVf-VE',
-    videoTitleEn: 'Reversing Steam Tumble Dryer Operation & Unloading in Denim Plant',
-    videoTitleBn: 'ইন্ডাস্ট্রিয়াল স্টিম টাম্বল ড্রায়ারে জিন্স শুকানো ও কুল-ডাউন ভিডিও',
+    videoTitleEn: 'Reversing Steam & Gas Tumble Dryer Operation in Denim Plant',
+    videoTitleBn: 'ইন্ডাস্ট্রিয়াল স্টিম ও গ্যাস টাম্বল ড্রায়ারে জিন্স শুকানো ও কুল-ডাউন ভিডিও',
     whatItDoesEn:
-      'Dries hydro-extracted jeans using hot air while tumbling them to relax fabric tension, bulk up cotton yarns, and deliver a soft, lofty handfeel.',
+      'Dries hydro-extracted garments via heated air circulation while relaxing fabric tension, removing creases (steam dryer), and developing a soft, lofty handfeel.',
     whatItDoesBn:
-      'গরম বাতাসের প্রবাহে ভেজা জিন্স শুকানোর পাশাপাশি কাপড়কে ঘুরিয়ে নরম হ্যান্ডফিল ও স্বাভাবিক শ্রিংকেজ প্রদান করে।',
+      'গরম বাতাসের প্রবাহে ভেজা জিন্স শুকানোর পাশাপাশি কাপড়কে ঘুরিয়ে ভাঁজ দূর করে, সুতা রিলাক্স করে এবং নরম হ্যান্ডফিল প্রদান করে।',
     howOperatedEn:
-      'Steam radiator coils or direct gas burners heat intake air to 70°C–80°C while the giant mesh drum reverses direction every 60 seconds so jeans do not twist into tight ropes; finishes with a 10-minute cool-down cycle.',
+      'Steam dryers use a heat exchanger (60°C–70°C for 40–50 min hot dry + 10–15 min cold dry) to relax and soften garments; Gas dryers burn natural gas/propane in a burner assembly (70°C–85°C for 30–35 min hot dry + 10–15 min cold dry) while the drum reverses direction periodically.',
     howOperatedBn:
-      'স্টিম কয়েল বা গ্যাস বার্নার বাতাসকে ৭০°C–৮০°C তাপমাত্রায় গরম করে এবং ড্রামটি প্রতি ৬০ সেকেন্ড পর পর উল্টো দিকে ঘোরে যাতে প্যান্টগুলো জট না পাকায়; শেষে ১০ মিনিট ঠান্ডা বাতাসে কুল-ডাউন করা হয়।',
+      'স্টিম ড্রায়ারে হিট এক্সচেঞ্জারের মাধ্যমে ৬০°C–৭০°C তাপে ৪০–৫০ মিনিট এবং গ্যাস ড্রায়ারে ন্যাচারাল গ্যাস বার্নারে ৭০°C–৮৫°C তাপে ৩০–৩৫ মিনিট গরম বাতাসে শুকানো হয়; সবশেষে ১০–১৫ মিনিট ঠান্ডা বাতাসে (Cold dry) কুল-ডাউন করা হয়।',
     disadvantagesEn:
-      '1. Temperatures above 80°C embrittle and snap Lycra/elastane fibers in stretch denim. 2. Uncovered metal buttons/rivets overheat and scorch adjacent fabric or chip enamel coatings.',
+      '1. Gas dryers produce a yellowish color cast on white or super-white fabrics. 2. Temperatures above 80°C degrade Lycra/spandex elasticity ("Lycra out" defect).',
     disadvantagesBn:
-      '১. ৮০°C-এর বেশি তাপমাত্রায় স্ট্রেচ ডেনিমের লাইক্রা/ইলাস্টেন সুতা নষ্ট হয়ে স্থিতিস্থাপকতা হারায়। ২. মেটাল বাটন ও রিভেট অতিরিক্ত গরম হয়ে কাপড়ে পোড়া দাগ ফেলতে পারে।',
+      '১. গ্যাস ড্রায়ারে সাদা বা সুপার-হোয়াইট কাপড় শুকালে কাপড়ে হলদেটে ভাব (Yellowish cast) চলে আসে। ২. ৮০°C-এর বেশি তাপে স্ট্রেচ ডেনিমের লাইক্রা সুতা আলগা হয়ে বেরিয়ে আসে (Lycra out)।',
   },
   {
     id: 'laser-system',
     code: 'W-MC-05',
-    nameEn: 'CO2 Digital Laser Distressing System',
-    nameBn: 'CO2 ডিজিটাল লেজার ডিস্ট্রেসিং মেশিন',
+    nameEn: 'CO2 Digital Laser Marking & Engraving System',
+    nameBn: 'CO2 ডিজিটাল লেজার মার্কিং ও ফ্রেডিং মেশিন',
     machineType: 'laser-system',
     capacityKg: '45 – 70 pcs / hour',
-    speedOrTemp: '10.6 µm Infrared Beam (60–90 sec/pc)',
-    liquorRatio: '0 Liters (100% Dry)',
+    speedOrTemp: '150–250W Avg (230–400W Peak) • 10 µm Gas',
+    liquorRatio: '0 Liters • Only 1.31% Strength Loss',
     youtubeUrl: 'https://www.youtube.com/results?search_query=Jeanologia+CO2+Laser+Denim+Jeans+Whiskers+Distressing',
     youtubeEmbedId: 'M7lc1UVf-VE',
     videoTitleEn: 'CO2 Digital Laser Engraving Whiskers & Vintage Fades on Jeans',
     videoTitleBn: 'ডিজিটাল CO2 লেজার মেশিনে জিন্সের হুইস্কার্স ও থাই ফেড তৈরি ভিডিও',
     whatItDoesEn:
-      'Engraves precision whiskers, thigh sanding, honeycombs, rips, and vintage wear patterns directly onto raw or desized jeans in 60–90 seconds without water or chemicals.',
+      'Replaces hazardous sandblasting, hand sanding, and PP spray by using a computer-driven CO2 laser beam (10 µm wavelength, 50–60 Hz, 1–100 ns pulse width) to vaporize surface indigo with casi-zero strength loss (1.31% warp loss vs. 56.68% for hand sand brush).',
     whatItDoesBn:
-      'পানি বা ক্ষতিকর কেমিক্যাল ছাড়াই মাত্র ৬০–৯০ সেকেন্ডে প্যান্টের ওপর হুইস্কার্স, থাই ফেড, হানিকম্ব ও ছেঁড়া ডিস্ট্রেসড ডিজাইন নিখুঁতভাবে তৈরি করে।',
+      'ক্ষতিকর স্যান্ডব্লাস্টিং, হ্যান্ড স্যান্ডিং ও পিপি স্প্রের বদলে কম্পিউটার নিয়ন্ত্রিত CO2 লেজার রশ্মি (১০ µm ওয়েভলেংথ, ১৫০–২৫০ ওয়াট) ব্যবহার করে মাত্র ১.৩১% শক্তি ক্ষয়ে নিখুঁত হুইস্কার্স, থাই ফেড ও ডিস্ট্রেসড ডিজাইন তৈরি করে (হ্যান্ড স্যান্ডিংয়ে শক্তি কমে ৫৬.৬৮%)।',
     howOperatedEn:
-      'The operator mounts the jean onto dual inflatable leg mannequins; overhead cameras align the garment position and galvanometer mirrors steer a high-wattage CO2 laser beam following a grayscale digital design file.',
+      'A graphic design is converted into an 8-bit grayscale `.bmp` bitmap file; pixel time and DPI resolution are set, the garment is mounted on a honeycomb table or inflatable dummy inside a protective housing with a fume extractor, and the laser beam rapidly melts and vaporizes dye at targeted points.',
     howOperatedBn:
-      'অপারেটর ইনফ্ল্যাটেবল ডামি পায়ে প্যান্ট পরিয়ে দেন; উপরের ক্যামেরা পজিশন ঠিক করার পর কম্পিউটারে থাকা গ্রেস্কেল ডিজাইন অনুযায়ী লেজার রশ্মি স্ক্যান করে ইনডিগো রঙ বাষ্পীভূত করে দেয়।',
+      'ডিজাইনকে গ্রেস্কেল `.bmp` বিটম্যাপ ফাইলে রূপান্তর করে পিক্সেল টাইম ও রেজোলিউশন সেট করা হয়; ফিউম এক্সট্রাক্টরযুক্ত বদ্ধ হাউজিংয়ে হানিকম্ব টেবিল বা ডামিতে প্যান্ট রেখে লেজার রশ্মির তাপে নির্দিষ্ট স্থানের ইনডিগো রঙ বাষ্পীভূত করা হয়।',
     disadvantagesEn:
-      '1. Leaves brownish carbonized ash dust ("laser burn") that must be washed off in a follow-up enzyme rinse. 2. Excessive laser power burns through warp yarns and causes holes.',
+      '1. Very high initial capital and maintenance cost requiring skilled operators. 2. Uniform digital patterns can look artificial without a light follow-up enzyme wash; laser fumes require strict extraction.',
     disadvantagesBn:
-      '১. লেজার করার পর কাপড়ে হালকা বাদামি পোড়া ছাই (Carbon ash) জমে, যা ধুয়ে ফেলতে হালকা ওয়াশ দিতে হয়। ২. লেজার পাওয়ার বেশি হলে সুতা পুড়ে কাপড় ছিঁড়ে যেতে পারে।',
+      '১. মেশিন সেটআপ ও রক্ষণাবেক্ষণ খরচ অত্যন্ত বেশি এবং দক্ষ অপারেটর প্রয়োজন। ২. হালকা ওয়াশ ছাড়া শুধু লেজার করলে লুক কিছুটা কৃত্রিম মনে হতে পারে এবং ধোঁয়া বের করার ফিউম এক্সট্রাক্টর ছাড়া স্বাস্থ্যঝুঁকি থাকে।',
   },
   {
     id: 'ozone-cabinet',
@@ -442,240 +451,448 @@ export const WASHING_MACHINES_DATA: WashingMachineSpec[] = [
   {
     id: 'curing-oven',
     code: 'W-MC-07',
-    nameEn: '3D Resin Curing & Baking Conveyor Oven',
-    nameBn: '৩ডি রেজিন কিউরিং ও বেকিং কনভেয়ার ওভেন',
+    nameEn: '3D Resin Curing & Permanent Wrinkle Industrial Oven',
+    nameBn: '৩ডি রেজিন কিউরিং ও পার্মানেন্ট রিঙ্কেল ইন্ডাস্ট্রিয়াল ওভেন',
     machineType: 'curing-oven',
     capacityKg: '120 – 250 pcs / hour',
-    speedOrTemp: '150°C – 165°C • 12–18 min',
-    liquorRatio: 'Dry Thermal Cross-Linking',
+    speedOrTemp: '140°C – 160°C • 20–40 min Cure',
+    liquorRatio: '20% DMDHEU Resin + 80% Water + 10m Cool',
     youtubeUrl: 'https://www.youtube.com/results?search_query=3D+Whisker+Resin+Curing+Oven+Denim+Jeans+Laundry',
     youtubeEmbedId: 'M7lc1UVf-VE',
-    videoTitleEn: '3D Mannequin Resin Spraying & Conveyor Oven Baking Process',
-    videoTitleBn: '৩ডি ডামিতে রেজিন স্প্রে ও কনভেয়ার ওভেনে বেকিং প্রসেস ভিডিও',
+    videoTitleEn: '3D Mannequin Resin Spraying & Industrial Oven Curing Process',
+    videoTitleBn: '৩ডি ডামিতে রেজিন স্প্রে ও ইন্ডাস্ট্রিয়াল ওভেনে বেকিং প্রসেস ভিডিও',
     whatItDoesEn:
-      'Thermally bakes resin-sprayed jeans mounted on 3D wire/silicone mannequins to permanently lock rigid 3D lap whiskers and behind-the-knee honeycombs.',
+      'Thermally cross-links cellulose hydroxyl (-OH) bonds in amorphous cotton regions using DMDHEU or formaldehyde-free glyoxal resin so 3D lap whiskers and overall crinkles stay permanently locked after home laundering.',
     whatItDoesBn:
-      'রেজিন স্প্রে করা জিন্সকে ৩ডি ডামিতে পরিয়ে উচ্চ তাপে বেক করে, যাতে কুঁচকি ও হাঁটুর পেছনের ত্রিমাত্রিক (3D) ভাঁজ ধোয়ার পরও স্থায়ী থাকে।',
+      '২০% ডিএমডিএইচইউ (DMDHEU) রেজিন ও ৮০% পানির মিশ্রণ স্প্রে করা জিন্সকে উচ্চ তাপে বেক করে তুলার অ্যামোরফাস অংশের হাইড্রোক্সিল বন্ডের সাথে কোভ্যালেন্ট ক্রস-লিংক তৈরি করে, যাতে ৩ডি হুইস্কার্স ও ওভারঅল রিঙ্কেল স্থায়ী হয়।',
     howOperatedEn:
-      'Operators spray or sponge DMDHEU catalyst resin onto crinkled zones, clamp the jeans onto flexible wire leg forms, and hang them on an overhead motorized conveyor chain that travels through an insulated 155°C hot-air chamber.',
+      'After all wet processes, 20% resin + 80% water (+ 0.5 g/L softener) is sprayed onto upper thighs or tumbled (5–10 min at 50°C for overall wrinkling), folded with clips on Dummies/hangers, baked inside the gas/electric industrial oven at 140°C–160°C for 20–40 minutes, and cooled for 10–15 minutes before clip removal.',
     howOperatedBn:
-      'অপারেটর প্যান্টের নির্দিষ্ট স্থানে রেজিন স্প্রে করে তারের ফ্রেমে ভাঁজ করে আটকে দেন এবং ওভারহেড কনভেয়ার চেইনে ঝুলিয়ে ১৫৫°C তাপমাত্রার ওভেন টানেলের ভেতর দিয়ে ১৫ মিনিট চালনা করেন।',
+      'সব ওয়েট ওয়াশ শেষে ২০% রেজিন ও ৮০% পানির দ্রবণ প্যান্টের থাইয়ে স্প্রে করে ক্লিপ দিয়ে ভাঁজ আটকানো হয় এবং হ্যাঙ্গার ট্রলিতে ঝুলিয়ে ইন্ডাস্ট্রিয়াল ওভেনে ১৪০°C–১৬০°C তাপে ২০–৪০ মিনিট কিউরিং করার পর ১০–১৫ মিনিট ঠান্ডা করে ক্লিপ খোলা হয়।',
     disadvantagesEn:
-      '1. Resin cross-linking reduces cotton tear and tensile strength by 20%–35%. 2. Over-baking yellows light blue denim and can release formaldehyde odor if non-eco resin is used.',
+      '1. DMDHEU hydrolysis can release toxic formaldehyde gas and reduces tensile/tear strength & abrasion resistance. 2. Causes yellowing after chlorine bleach and can damage spandex elasticity.',
     disadvantagesBn:
-      '১. রেজিন কিউরিংয়ের ফলে তুলার টিয়ার স্ট্রেন্থ (ছিঁড়ে যাওয়ার শক্তি) ২০%–৩৫% কমে যায়। ২. অতিরিক্ত তাপে হালকা নীল কাপড় হলুদ হয়ে যায় এবং নিম্নমানের রেজিন থেকে ফরমালডিহাইডের গন্ধ বের হতে পারে।',
+      '১. সাধারণ DMDHEU রেজিন থেকে বিষাক্ত ফরমালডিহাইড নির্গত হতে পারে এবং কাপড়ের টেনসাইল ও টিয়ার স্ট্রেন্থ কমে যায়। ২. ক্লোরিন ব্লিচের পর হলুদ দাগ পড়ে এবং স্ট্রেচ কাপড়ের ইলাস্টিসিটি নষ্ট হতে পারে।',
+  },
+  {
+    id: 'sample-rotary-washer',
+    code: 'W-MC-08',
+    nameEn: 'Sample Washing & High-Temp Rotary Garment Dyeing Machine',
+    nameBn: 'স্যাম্পল ওয়াশার ও রোটারি গার্মেন্টস ডাইং মেশিন',
+    machineType: 'sample-rotary-washer',
+    capacityKg: '15 – 50 kg (Sample / Small Batch)',
+    speedOrTemp: '10 – 25 RPM • Up to 130°C HT Dyeing',
+    liquorRatio: '1:10 to 1:15 (Garment Dyeing)',
+    youtubeUrl: 'https://www.youtube.com/results?search_query=Rotary+Garment+Dyeing+Machine+Sample+Washing+Denim',
+    youtubeEmbedId: 'M7lc1UVf-VE',
+    videoTitleEn: 'Sample Washing & Rotary Drum Garment Dyeing Machine Operation',
+    videoTitleBn: 'স্যাম্পল ওয়াশিং ও রোটারি ড্রাম গার্মেন্টস ডাইং মেশিন প্রসেস ভিডিও',
+    whatItDoesEn:
+      'Executes small-scale R&D wash recipe trials before bulk production and performs full-immersion Rotary Garment Dyeing (Reactive, Direct, Sulfur, and Pigment wash-down) on RFD/grey garments in a single machine.',
+    whatItDoesBn:
+      'বাল্ক প্রোডাকশনের আগে ছোট স্কেলে ওয়াশ রেসিপি ট্রায়াল ও স্যাম্পল ডেভেলপমেন্ট করে এবং আরএফডি (RFD) পোশাকে এক মেশিনেই ডি-সাইজিং, স্কোরিং, ব্লিচিং, রিঅ্যাক্টিভ/পিগমেন্ট ডাইং ও ফিনিশিং সম্পন্ন করে।',
+    howOperatedEn:
+      'Replaced older European paddle/pedal dyeing machines; features a floor-fixed outer shell and a bidirectional perforated inner drum running at low speed (10 RPM wash / 80°C reactive dyeing with 50 g/L Glauber salt & 20 g/L Soda ash) to prevent garment abrasion while ensuring uniform dye liquor penetration.',
+    howOperatedBn:
+      'পুরোনো প্যাডেল ডাইং মেশিনের উন্নত সংস্করণ হিসেবে এতে স্থির বাইরের শেল ও ভেতরে ছিদ্রযুক্ত ঘূর্ণায়মান ড্রাম থাকে; কম গতিতে (১০ RPM) ও ৮০°C তাপে গ্লুবার সল্ট (৫০ g/L) ও সোডা অ্যাশ (২০ g/L) যোগে সমানভাবে গার্মেন্টস ডাইং করে।',
+    disadvantagesEn:
+      '1. High RPM causes chafe/abrasion marks on delicate garments, while low M:L ratio causes patchy dyeing. 2. Requires pre-shrunk interlinings, polyester/core-spun threads, and nickel/polyester buttons to avoid accessory destruction.',
+    disadvantagesBn:
+      '১. RPM বেশি হলে কাপড়ে ঘর্ষণের দাগ পড়ে এবং পানি কম হলে ছোপ ছোপ (Patchy) ডাইং হয়। ২. নাইলন বা রাবার বাটন গলে যায়, তাই পলিয়েস্টার বাটন ও কোর-স্পান সুতা ব্যবহার করা বাধ্যতামূলক।',
+  },
+  {
+    id: 'pp-spray-booth',
+    code: 'W-MC-09',
+    nameEn: 'PP Spray Cabin with Inflatable Air Dummy & Water-Curtain Scrubber',
+    nameBn: 'পিপি স্প্রে বুথ, এয়ার ডামি ও ওয়াটার-শাওয়ার এক্সহস্ট সিস্টেম',
+    machineType: 'pp-spray-booth',
+    capacityKg: '30 – 60 pcs / hour per booth',
+    speedOrTemp: '60–100 PSI Air • 0.5–15 g/L KMnO4',
+    liquorRatio: 'Closed-Loop Neutralized Water Shower',
+    youtubeUrl: 'https://www.youtube.com/results?search_query=PP+Spray+Booth+Denim+Washing+Air+Dummy+Jeans',
+    youtubeEmbedId: 'M7lc1UVf-VE',
+    videoTitleEn: 'PP Spray Booth Air Dummy Operation & Water-Shower Fume Scrubber',
+    videoTitleBn: 'পিপি স্প্রে কেবিনে এয়ার ডামি ও ওয়াটার-শাওয়ার পিউরিফিকেশন প্রসেস ভিডিও',
+    whatItDoesEn:
+      'Applies atomized Potassium Permanganate (`KMnO4`) solution onto localized thigh, knee, and hip zones while capturing toxic chemical mist via a negative-pressure exhaust and water-shower scrubber before releasing clean air.',
+    whatItDoesBn:
+      'ইনফ্ল্যাটেবল রাবার ডামিতে জিন্স পরিয়ে নির্দিষ্ট স্থানে পটাশিয়াম পারম্যাঙ্গানেট (PP) স্প্রে করে উজ্জ্বল সাদা ফেড তৈরি করে এবং ওয়াটার-শাওয়ার এক্সহস্ট সিস্টেমের মাধ্যমে বিষাক্ত কেমিক্যাল বাতাস পরিশোধন করে বাইরে ছাড়ে।',
+    howOperatedEn:
+      'Desized jeans are stretched tight over a pneumatic rubber air dummy; the operator sprays 0.4%–2% `KMnO4` solution (pink liquid turning muddy brown on fabric) while rear exhaust fans suck chemical mist through a cascading water shower that is neutralized before draining to the ETP.',
+    howOperatedBn:
+      'বাতাস ভরা রাবার ডামিতে প্যান্ট টাইট করে পরিয়ে অপারেটর স্প্রে গান দিয়ে পিপি দ্রবণ স্প্রে করেন; পেছনের এক্সহস্ট ফ্যান বিষাক্ত বাতাসকে টেনে ওয়াটার শাওয়ারের ভেতর দিয়ে পাঠায়, যেখানে পানি কেমিক্যাল শোষণ করে পরিষ্কার বাতাস বাইরে ছাড়ে এবং দূষিত পানি নিউট্রালাইজার দিয়ে শোধন করা হয়।',
+    disadvantagesEn:
+      '1. Low gun air-to-water pressure causes liquid droplets that burn bright spots into denim. 2. High occupational health hazard if operator PPE (respirator mask, goggles, gloves, apron) is not strictly worn.',
+    disadvantagesBn:
+      '১. স্প্রে গানের এয়ার প্রেসার কমে গেলে ফোঁটা পড়ে কাপড়ে উজ্জ্বল সাদা স্পট (Bright spot) তৈরি হয়। ২. অপারেটর মাস্ক, গগলস, গ্লাভস ও অ্যাপ্রন না পরলে শ্বাসকষ্ট ও চর্মরোগের তীব্র ঝুঁকি থাকে।',
   },
 ];
 
-// 3. 8 Core Washing Chemicals Encyclopedia
+// 3. 14 Core Washing Chemicals & Textile Auxiliaries Encyclopedia
 export const WASHING_CHEMICALS_DATA: WashingChemicalSpec[] = [
   {
     id: 'amylase',
     code: 'CHEM-01',
-    nameEn: 'Alpha-Amylase Desizing Enzyme',
-    nameBn: 'আলফা-অ্যামাইলেজ ডি-সাইজিং এনজাইম',
-    chemicalFormula: 'α-Amylase Bio-Catalyst + Non-Ionic Surfactant',
-    categoryEn: 'Step 01 • Starch Removal',
-    categoryBn: 'ধাপ ০১ • মাড় বা স্টার্চ অপসারণ',
-    dosageRange: '1.0 – 2.5 g/L',
-    tempRange: '50°C – 60°C',
-    phRange: 'pH 6.0 – 7.0',
+    nameEn: 'Alpha-Amylase Desizing Enzyme (Bacterial / Malt / Pancreatic)',
+    nameBn: 'আলফা-অ্যামাইলেজ ডি-সাইজিং এনজাইম (ব্যাকটেরিয়াল ও মল্ট)',
+    chemicalFormula: 'α-Amylase Bio-Catalyst (Bacillus subtilis) + Non-Ionic Wetting Agent',
+    categoryEn: 'Step 01 • Starch & Size Hydrolysis',
+    categoryBn: 'ধাপ ০১ • মাড় বা স্টার্চ অপসারণ (Desizing)',
+    dosageRange: '0.5 – 2.0 g/L (M:L 1:9)',
+    tempRange: '50°C – 70°C (Killed >75°C)',
+    phRange: 'pH 5.5 – 7.5',
     hazardLevel: 'Low (Bio)',
     swatchColor: '#0ea5e9',
     whatItDoesEn:
-      'Breaks down insoluble weaving starch, tallow, and PVA sizing coating the warp yarns into water-soluble sugars so the fabric becomes absorbent and soft.',
+      'Hydrolyzes 1,4-glycosidic linkages in insoluble warp starch (amylose/amylopectin), CMC, waxes, fats, and tallow into water-soluble short-chain dextrins and maltose without attacking cellulose fibers.',
     whatItDoesBn:
-      'উইভিংয়ের সময় ওয়ার্প সুতায় দেওয়া অদ্রবণীয় মাড় (Starch) ও ওয়াক্স ভেঙে পানিতে দ্রবণীয় শর্করায় রূপান্তর করে, যাতে কাপড় নরম ও পরবর্তী ওয়াশের উপযোগী হয়।',
+      'উইভিংয়ের সময় ওয়ার্প সুতায় দেওয়া অদ্রবণীয় স্টার্চ (অ্যামাইলোজ ও অ্যামাইলোপেকটিন), সিএমসি ও ওয়াক্সের ১:৪ গ্লাইকোসিডিক বন্ড ভেঙে পানিতে দ্রবণীয় ডেক্সট্রিন ও মল্টোজে রূপান্তর করে, কিন্তু তুলার সেলুলোজের কোনো ক্ষতি করে না।',
     howOperatedEn:
-      'Dosed into the first warm bath (55°C, pH 6.5) together with 0.5 g/L wetting agent for 15–20 minutes, followed by two hot/warm rinses to flush out hydrolyzed starch.',
+      'Dosed in Step 1 Desizing bath (M:L 1:9, 60°C, 15–25 min) alongside 0.8–1.0 g/L non-ionic detergent/wetting agent and salt; followed by a 70°C–80°C hot wash (5 min) to stop size redeposition and evaluated via TEGEWA Violet Scale (KI + Iodine test).',
     howOperatedBn:
-      'প্রথম বাথে ৫৫°C তাপমাত্রা ও pH ৬.৫-এ ওয়েটিং এজেন্টের সাথে মিশিয়ে ১৫–২০ মিনিট ওয়াশ করা হয় এবং শেষে গরম পানিতে ধুয়ে মাড় বের করে দেওয়া হয়।',
+      'প্রথম ধাপে ১:৯ লিক্যার রেশিওতে ৬০°C তাপমাত্রায় নন-আয়নিক ডিটারজেন্ট ও লবণের সাথে ১৫–২৫ মিনিট চালানো হয়; এরপর ৭০°C–৮০°C গরম পানিতে ৫ মিনিট ধুয়ে মাড় বের করা হয় এবং পটাশিয়াম আয়োডাইড (TEGEWA রেটিং) দিয়ে স্টার্চ পরীক্ষা করা হয়।',
     disadvantagesEn:
-      '1. Ineffective if bath temperature exceeds 75°C (denatures enzyme protein). 2. Incomplete desizing leaves invisible starch patches that block subsequent enzyme/bleach baths, creating blotchy shade defects.',
+      '1. Deactivated if temperature exceeds 75°C–95°C or if anionic surfactants poison enzyme activity. 2. Skipping desizing causes patchy dyeing, uneven enzyme fade, and stiff handfeel.',
     disadvantagesBn:
-      '১. পানির তাপমাত্রা ৭৫°C ছাড়িয়ে গেলে এনজাইম নষ্ট হয়ে কাজ করা বন্ধ করে দেয়। ২. মাড় পুরোপুরি না উঠলে পরবর্তী এনজাইম ও ব্লিচ ওয়াশে কাপড়ে ছোপ ছোপ দাগ (Uneven patchy shade) পড়ে।',
+      '১. তাপমাত্রা ৭৫°C ছাড়িয়ে গেলে বা ভুল সারফ্যাক্ট্যান্ট দিলে এনজাইম নষ্ট হয়ে যায়। ২. ডি-সাইজিং না করলে পরবর্তী ওয়াশ বা ডাইংয়ে ছোপ ছোপ দাগ (Patchy effect) পড়ে এবং কাপড় খসখসে থাকে।',
   },
   {
     id: 'cellulase',
     code: 'CHEM-02',
-    nameEn: 'Cellulase Enzyme (Acid vs. Neutral)',
-    nameBn: 'সেলুলেজ বায়ো-এনজাইম (অ্যাসিড ও নিউট্রাল)',
-    chemicalFormula: 'Endoglucanase Cellulase Protein Complex',
-    categoryEn: 'Step 02 • Bio-Stone Abrasion',
-    categoryBn: 'ধাপ ০২ • বায়ো-স্টোন ও ফেডিং',
-    dosageRange: '1.0 – 3.0 g/L',
-    tempRange: '45°C – 55°C',
-    phRange: 'pH 4.5–5.2 (Acid) | pH 6.0–7.0 (Neutral)',
+    nameEn: 'Cellulase Enzyme (Acid Liquid vs. Neutral Powder/SL)',
+    nameBn: 'সেলুলেজ বায়ো-এনজাইম (অ্যাসিড ও নিউট্রাল এনজাইম)',
+    chemicalFormula: 'Endoglucanase + Exoglucanase + β-Glucosidase Complex',
+    categoryEn: 'Step 02 • Bio-Polishing & Stone Abrasion',
+    categoryBn: 'ধাপ ০২ • বায়ো-পলিশিং ও স্টোন ফেডিং',
+    dosageRange: '1.0 – 2.5 g/L (M:L 1:8)',
+    tempRange: '40°C – 55°C (Acid) | 40°C – 60°C (Neutral)',
+    phRange: 'pH 4.5–5.5 (Acid) | pH 6.0–7.0 (Neutral)',
     hazardLevel: 'Low (Bio)',
     swatchColor: '#3b82f6',
     whatItDoesEn:
-      'Selectively digests surface cellulose micro-fibrils on dyed warp yarns, releasing trapped indigo ring dye to produce a salt-and-pepper stone-washed look with minimal stone load.',
+      'Cleaves β-1,4-glycosidic bonds in cotton cellulose (Cellulose + H2O → Glucose): Endoglucanase attacks amorphous regions, Exoglucanase cuts chain ends, and β-glucosidase forms glucose—removing surface fuzz (bio-polishing) and releasing indigo ring dye.',
     whatItDoesBn:
-      'তুলার উপরিভাগের ক্ষুদ্র ফাইবারগুলোকে আংশিক হজম করে ইনডিগো রঙের কণা আলগা করে দেয়, ফলে কম পাথর ব্যবহার করেই আকর্ষণীয় সল্ট-অ্যান্ড-পেপার স্টোন ওয়াশ লুক পাওয়া যায়।',
+      'তুলার বিটা-১,৪-গ্লাইকোসিডিক বন্ড ভেঙে উপরিভাগের ক্ষুদ্র ফাইবার (Micro-fibrils) পরিষ্কার করে (বায়ো-পলিশিং) এবং ইনডিগো রঙের কণা আলগা করে কম পাথরেই আকর্ষণীয় স্টোন-ওয়াশ লুক ও পিলিং প্রতিরোধ ক্ষমতা তৈরি করে।',
     howOperatedEn:
-      'Run in rotary drum for 30–45 minutes at 50°C with acetic acid buffer (for Acid Cellulase) or neutral buffer; deactivated at the end by raising temperature to 75°C or pH > 9 with soda ash for 10 minutes.',
+      'Acid enzyme (slightly brown liquid) runs 25–50 min at 40–55°C (pH 4.5–5.5 with 0.6 g/L acetic acid); Neutral enzyme runs 40–80 min at 40–60°C (pH 6–7). Must be deactivated ("enzyme killing") by raising bath to 90°C for 1 min or adding sodium metabisulfite/alkali.',
     howOperatedBn:
-      '৫০°C তাপমাত্রায় নির্দিষ্ট pH বাফারসহ ৩০–৪৫ মিনিট ঘোরানো হয়; ওয়াশ শেষে সোডা অ্যাশ দিয়ে pH ৯+ করে অথবা ৭৫°C গরম পানিতে ১০ মিনিট রেখে এনজাইম নিষ্ক্রিয় (Deactivate) করা হয়।',
+      'অ্যাসিড এনজাইম pH ৪.৫–৫.৫ ও ৪০–৫৫°C তাপে ২৫–৫০ মিনিট এবং নিউট্রাল এনজাইম pH ৬–৭ ও ৪০–৬০°C তাপে ৪০–৮০ মিনিট চালানো হয়। ওয়াশ শেষে ৯০°C তাপে ১ মিনিট চালিয়ে (Enzyme killing) অথবা মেটাবাইসালফাইট/ক্ষার দিয়ে এনজাইম নিষ্ক্রিয় করা বাধ্যতামূলক।',
     disadvantagesEn:
-      '1. Acid cellulase works fast but causes severe indigo backstaining on white pocket bags and weft threads. 2. Over-running (>60 min) weakens cotton seams and causes fabric strength loss (>15%).',
+      '1. Acid enzyme works fast but causes heavy indigo backstaining on white weft/pockets. 2. Prolonged exposure causes over-fading, >10% tensile strength loss, and loss of dimensional stability.',
     disadvantagesBn:
-      '১. অ্যাসিড সেলুলেজ দ্রুত কাজ করলেও সাদা পকেট ব্যাগ ও ভেতরের ওয়েফট সুতায় নীল রঙ মাখিয়ে (Backstaining) নষ্ট করে। ২. অতিরিক্ত সময় চালালে কাপড়ের শক্তি ১৫%+ কমে গিয়ে সেলাই ছিঁড়ে যায়।',
+      '১. অ্যাসিড এনজাইম দ্রুত কাজ করলেও সাদা পকেট ও ওয়েফট সুতায় তীব্র নীল দাগ (Backstaining) ফেলে। ২. অতিরিক্ত সময় বা ঘনত্বে চালালে কাপড়ের শক্তি কমে যায়, কাপড় ঝুলে পড়ে এবং সেলাই দুর্বল হয়ে যায়।',
   },
   {
     id: 'pumice-stone',
     code: 'CHEM-03',
-    nameEn: 'Volcanic Pumice Stones (Lava Media)',
-    nameBn: 'ভলকানিক পিউমিস স্টোন (আগ্নেয় ঝামা পাথর)',
-    chemicalFormula: 'Porous Silicate Lava Rock (SiO2 / Al2O3)',
-    categoryEn: 'Mechanical Abrasion & Acid Carrier',
+    nameEn: 'Volcanic Pumice Stones & Thermocol / Styrofoam Media',
+    nameBn: 'ভলকানিক পিউমিস স্টোন ও থার্মোকল বল (Stone & Knit Media)',
+    chemicalFormula: '71.91% SiO2 + 12.66% Al2O3 + 4.30% K2O + 3.45% Na2O (Mohs 6)',
+    categoryEn: 'Mechanical Abrasion & Acid Wash Carrier',
     categoryBn: 'যান্ত্রিক ঘর্ষণ ও অ্যাসিড ওয়াশ মাধ্যম',
-    dosageRange: '0.5 : 1 to 2 : 1 (Stone-to-Fabric Weight)',
-    tempRange: '25°C – 60°C',
-    phRange: 'All pH Ranges',
+    dosageRange: '0.5 : 1 (½ Weight of Garments)',
+    tempRange: 'Ambient (Dry Acid) to 60°C–90°C',
+    phRange: 'Natural Stone pH 8.0',
     hazardLevel: 'Medium',
     swatchColor: '#a8a29e',
     whatItDoesEn:
-      'Physically batters raised seams, pocket hems, waistbands, and thigh surfaces to chip away outer indigo layers; also serves as the porous sponge carrier for Potassium Permanganate in Acid/Ice washes.',
+      'Perforated volcanic glass rock that floats on water, abrades multi-layer seam edges (collar, cuff, pocket, waistband, hem) for vintage contrast, and absorbs oxidizing solution (`KMnO4 + H3PO4`) for waterless Acid/Ice washes. (For delicate knit garments, lightweight Thermocol/Styrofoam balls replace stones).',
     whatItDoesBn:
-      'কাপড়ের উঁচু সেলাই, পকেট ও কোমরের প্রান্তে ঘর্ষণ ঘটিয়ে নীল রঙ তুলে ভিন্টেজ হাইলাইট তৈরি করে এবং অ্যাসিড/আইস ওয়াশে কেমিক্যাল বহনকারী স্পঞ্জ হিসেবে কাজ করে।',
+      'আগ্নেয়গিরির অগ্ন্যুৎপাত থেকে তৈরি ছিদ্রযুক্ত ঝামা পাথর যা পানিতে ভাসে এবং কাপড়ের মোটা সেলাইয়ের কিনারা ঘষে ভিন্টেজ লুক দেয়; এছাড়া অ্যাসিড ওয়াশে কেমিক্যাল শুষে নেয়। (নিট পোশাকের ক্ষেত্রে কাপড়ের ক্ষতি এড়াতে পাথরের বদলে হালকা থার্মোকল বা স্টাইরোফোম বল ব্যবহৃত হয়)।',
     howOperatedEn:
-      'Stones (2–6 cm diameter, imported from Turkey/Indonesia) are tumbled with jeans for 30–60 minutes; afterward, garments must go through a de-stoning shaker tumbler and manual pocket inspection.',
+      'Available in Turkish (white) and Indonesian (slightly brown) grades across 3 sizes: Small (2–3 cm for uniform abrasion), Medium (4–5 cm), and Large (6–7 cm for high contrast). Reused 2–3 times before disintegrating; requires multiple rinses and shaking to remove grit.',
     howOperatedBn:
-      '২–৬ সেমি আকারের ছিদ্রযুক্ত হালকা পাথর প্যান্টের সাথে ড্রামে ৩০–৬০ মিনিট ঘোরানো হয়; ওয়াশ শেষে শেকার ড্রাম ও হাতে চেক করে পকেট থেকে পাথরের টুকরো ও বালু ঝেড়ে ফেলা হয়।',
+      'ইন্দোনেশিয়ান (হালকা বাদামি) ও তুর্কি (সাদা) পাথর ৩টি সাইজে পাওয়া যায়: ছোট (২–৩ সেমি), মাঝারি (৪–৫ সেমি) ও বড় (৬–৭ সেমি, হাই-কনট্রাস্টের জন্য)। একই পাথর ২–৩ বার ব্যবহার করা যায় এবং ওয়াশ শেষে পাথর ও বালু ঝেড়ে ফেলতে হয়।',
     disadvantagesEn:
-      '1. Disintegrates into gritty stone sludge that clogs factory ETP drains and filters. 2. Damages metal buttons/zippers and leaves gritty sand trapped inside coin pockets.',
+      '1. Abrades washing machine drums and garment hems ("after-wash holes"). 2. Generates heavy grit/sludge waste in ETP and requires high labor to de-stone pockets.',
     disadvantagesBn:
-      '১. পাথর ক্ষয়ে প্রচুর কাদা ও স্লাজ তৈরি হয় যা ফ্যাক্টরির ড্রেন ও ইটিপি (ETP) ব্লক করে দেয়। ২. মেটাল বাটন ও জিপারে দাগ ফেলে এবং পকেটের কোণায় বালু জমে থাকে।',
+      '১. ওয়াশিং মেশিনের ড্রাম ক্ষয় করে এবং অতিরিক্ত ঘর্ষণে কাপড়ে ছিদ্র (After-wash hole) তৈরি করতে পারে। ২. প্রচুর পাথরের গুঁড়ো ও স্লাজ তৈরি করে যা ইটিপি (ETP)-তে পরিবেশগত সমস্যা সৃষ্টি করে।',
   },
   {
     id: 'hypochlorite',
     code: 'CHEM-04',
-    nameEn: 'Sodium Hypochlorite (Liquid Chlorine Bleach)',
-    nameBn: 'সোডিয়াম হাইপোক্লোরাইট (তরল ক্লোরিন ব্লিচ)',
-    chemicalFormula: 'NaOCl (10%–12% Active Available Chlorine)',
-    categoryEn: 'Step 03 • Shade Stripping & Ice Wash',
+    nameEn: 'Sodium Hypochlorite vs. Bleaching Powder (Chlorine Bleach)',
+    nameBn: 'সোডিয়াম হাইপোক্লোরাইট ও ব্লিচিং পাউডার (ক্লোরিন ব্লিচ)',
+    chemicalFormula: 'NaOCl vs. Ca(OCl)2 + Na2CO3 / NaHCO3 Activator',
+    categoryEn: 'Step 03 • Oxidative Color Stripping',
     categoryBn: 'ধাপ ০৩ • রঙ হালকা ও ব্লিচ ওয়াশ',
-    dosageRange: '3 – 15 mL/L',
-    tempRange: '40°C – 50°C',
-    phRange: 'pH 10.5 – 11.5 (Strictly Alkaline)',
+    dosageRange: '10 g/L K.C.I Bleach Powder + 5 g/L Soda Ash',
+    tempRange: '40°C – 60°C (12–15 min)',
+    phRange: 'pH 9.2 – 11.0 (Danger Point: pH 7.0)',
     hazardLevel: 'High (Restricted)',
     swatchColor: '#f59e0b',
     whatItDoesEn:
-      'Oxidizes and cleaves the chromophore double bond of indigo dye into colorless isatin, rapidly stripping dark navy denim down to mid, sky, or ice-blue shades.',
+      'Liberates hypochlorous ions (`OCl-`) that cleave chromophore double bonds in indigo and sulfur dyes for fast, low-cost dark/medium/light shade fading. (`NaOCl` is stable and precipitate-free, whereas cheaper `Ca(OCl)2` forms `CaCO3` lime precipitate causing harsh handfeel).',
     whatItDoesBn:
-      'ইনডিগো রঙের অণুর ডাবল বন্ড ভেঙে বর্ণহীন যৌগে রূপান্তর করে, ফলে গাঢ় নীল ডেনিম দ্রুত হালকা আকাশি বা আইস-ব্লু শেডে পরিণত হয়।',
+      'হাইপোক্লোরাস আয়ন (OCl-) তৈরি করে ইনডিগো রঙের ডাবল বন্ড ভেঙে দ্রুত রঙ হালকা করে। (`NaOCl` স্থিতিশীল ও তলানিহীন, কিন্তু সস্তা ব্লিচিং পাউডার `Ca(OCl)2` কাপড়ে ক্যালসিয়াম কার্বনেটের সাদা তলানি ফেলে কাপড় খসখসে করে)।',
     howOperatedEn:
-      'Buffered above pH 10.5 with soda ash (`Na2CO3`) before adding NaOCl slowly over 15–25 minutes; immediately followed by mandatory Antichlor neutralization (`Na2S2O5`).',
+      'Run at M:L 1:8, 60°C for 12–15 min with 10 g/L bleaching powder and 5 g/L soda ash (or `NaHCO3` for rapid light shades) to keep pH strictly at 9.2–11.0. Followed immediately by 2 rinses and Antichlor neutralization (`3 g/L Sodium Hyposulfite` at 40°C for 10–12 min).',
     howOperatedBn:
-      'সোডা অ্যাশ দিয়ে পানির pH ১০.৫-এর ওপরে রেখে ধীরে ধীরে ব্লিচ যোগ করে ১৫–২৫ মিনিট চালানো হয়; এরপর অবশ্যই মেটাবাইসালফাইট দিয়ে অ্যান্টিক্লোর নিউট্রালাইজেশন করতে হয়।',
+      '১:৮ অনুপাতে ৬০°C তাপে ১০ g/L ব্লিচিং পাউডার ও ৫ g/L সোডা অ্যাশ দিয়ে pH ৯.২–১১.০ রেখে ১২–১৫ মিনিট চালানো হয়; এরপর ২ বার রিন্স করে সোডিয়াম হাইপোসালফাইট (৩ g/L) দিয়ে অ্যান্টিক্লোর নিউট্রালাইজেশন করা হয়।',
     disadvantagesEn:
-      '1. Chemically attacks and snaps elastane/Lycra filaments (causes baggy knees/blistering). 2. If pH drops below 9, liberates toxic chlorine gas and causes catastrophic cellulose tendering (tearing).',
+      '1. Never run at neutral pH 7 ("Damage Point")—causes rapid cellulose degradation and pinholes. 2. Reacts with residual protein to form yellow chloramines (`>NCl`), corrodes stainless steel, and destroys spandex/wool.',
     disadvantagesBn:
-      '১. স্ট্রেচ ডেনিমের লাইক্রা/ইলাস্টেন সুতা পুড়িয়ে নষ্ট করে দেয় (কাপড়ে ফোসকা বা ঢিলা হয়ে যাওয়া)। ২. pH ৯-এর নিচে নামলে বিষাক্ত ক্লোরিন গ্যাস নির্গত হয় এবং কাপড় কাগজের মতো ছিঁড়ে যায়।',
+      '১. কখনোই pH ৭ (Damage Point)-এ ব্লিচ করা যাবে না—এতে সেলুলোজ ভেঙে কাপড় ছিঁড়ে যায়। ২. ক্লোরামিন তৈরি হয়ে কাপড় হলুদ হয়ে যায়, মেশিনে মরিচা ধরে এবং স্প্যানডেক্স বা উলের কাপড় নষ্ট হয়ে যায়।',
   },
   {
     id: 'permanganate',
     code: 'CHEM-05',
-    nameEn: 'Potassium Permanganate (PP Spray / Acid Oxidizer)',
-    nameBn: 'পটাশিয়াম পারম্যাঙ্গানেট (পিপি স্প্রে / অক্সিডাইজার)',
-    chemicalFormula: 'KMnO4 + Phosphoric Acid Activator',
-    categoryEn: 'Dry Local Bleach & Acid Wash',
-    categoryBn: 'লোকাল হোয়াইট ফেড ও অ্যাসিড ওয়াশ',
-    dosageRange: '2 – 8 g/L (Spray) | 5–15 g/L (Stone Soak)',
-    tempRange: '25°C Ambient',
-    phRange: 'pH 3.0 – 4.5 (Acidic)',
+    nameEn: 'Potassium Permanganate (PP Spray, Sponging & Acid Soak)',
+    nameBn: 'পটাশিয়াম পারম্যাঙ্গানেট (পিপি স্প্রে, স্পঞ্জিং ও অ্যাসিড ওয়াশ)',
+    chemicalFormula: 'KMnO4 + H3PO4 / CH3COOH (Pink → Brown MnO2)',
+    categoryEn: 'Dry Local Whitening & Acid Wash Oxidizer',
+    categoryBn: 'লোকাল হোয়াইট ফেড ও অ্যাসিড ওয়াশ অক্সিডাইজার',
+    dosageRange: '0.5–15 g/L (Spray: 0.4% std) | 10 g/L + 2.5 g/L H3PO4 (Acid Stone)',
+    tempRange: 'Ambient 25°C (Dry Process)',
+    phRange: 'pH 3.0 – 4.5 (Acidic Activator)',
     hazardLevel: 'High (Restricted)',
     swatchColor: '#ec4899',
     whatItDoesEn:
-      'Produces bright localized white thigh/knee highlights when sprayed on scraped areas, or sharp marbled Acid/Ice contrasts when soaked into pumice stones.',
+      'Powerful oxidizing agent applied via spray gun (PP Spray), sponge/towel/brush over rubber pattern boards (PP Sponging: 20% PP + 80% water), or soaked into pumice stones (100L water + 1000g KMnO4 + 250g Phosphoric acid) for localized bright white fades and Acid Wash.',
     whatItDoesBn:
-      'প্যান্টের থাই ও হাঁটুতে স্প্রে করলে উজ্জ্বল সাদা ফেড তৈরি করে এবং পিউমিস স্টোনে ভিজিয়ে টাম্বল করলে অ্যাসিড ও আইস ওয়াশের মার্বেল ইফেক্ট দেয়।',
+      'শক্তিশালী অক্সিডাইজার যা স্প্রে গান (PP Spray), রাবার বোর্ডের ওপর স্পঞ্জ/তোয়ালে/ব্রাশ (PP Sponging) অথবা পিউমিস স্টোনে ভিজিয়ে (১০০ লিটার পানি + ১০০০ গ্রাম KMnO4 + ২৫০ গ্রাম ফসফরিক অ্যাসিড) স্থানীয় সাদা ফেড ও অ্যাসিড ওয়াশ তৈরি করে।',
     howOperatedEn:
-      'Sprayed as a pink mist onto inflatable mannequins inside negative-pressure water-curtain booths (turning brown `MnO2` on fabric), then reduced to bright white in a Sodium Metabisulfite wet bath.',
+      'Indigo requires low PP concentration while sulfur black requires high concentration; spraying distance and gun air-to-water ratio are controlled inside water-curtain booths. Pink `KMnO4` oxidizes on fabric into muddy brown `MnO2`, which must be immediately neutralized with `3–5 g/L Sodium Metabisulfite` in wet wash.',
     howOperatedBn:
-      'ওয়াটার-কার্টেন স্প্রে বুথে ডামির ওপর গোলাপি তরল হিসেবে স্প্রে করা হয় (যা কাপড়ে বাদামি রঙ ধারণ করে) এবং পরে মেটাবাইসালফাইট বাথে ধুয়ে ধবধবে সাদা করা হয়।',
+      'ইনডিগো ডেনিমে কম ঘনত্ব ও সালফার ব্ল্যাকে বেশি ঘনত্ব লাগে; স্প্রে করার পর গোলাপি তরল কাপড়ে শুকিয়ে মেটে বাদামি (`MnO2`) বর্ণ ধারণ করে, যা সাথে সাথে ওয়েট ওয়াশে সোডিয়াম মেটাবাইসালফাইট (৩–৫ g/L) দিয়ে ধুয়ে সাদা ও নিষ্ক্রিয় করতে হয়।',
     disadvantagesEn:
-      '1. Restricted by ZDHC/EIM due to operator inhalation toxicity and heavy metal (`Mn`) effluent. 2. Unneutralized brown `MnO2` spots cause severe fabric yellowing in shipping cartons.',
+      '1. Micro-particle spray mist causes severe respiratory/lung damage if inhaled without exhaust scrubbers. 2. Incomplete neutralization leaves lingering bad odor and yellow manganese stains.',
     disadvantagesBn:
-      '১. শ্রমিকদের শ্বাসকষ্ট ও পরিবেশ দূষণের কারণে EIM ও বায়ারদের কাছে এটি অত্যন্ত নিয়ন্ত্রিত (লেজার এর বিকল্প)। ২. বাদামি দাগ ভালোভাবে নিউট্রালাইজ না করলে কার্টনে প্যান্ট হলুদ হয়ে নষ্ট হয়।',
+      '১. স্প্রে গানের ক্ষুদ্র রাসায়নিক কণা শ্বাসের সাথে ফুসফুসে গেলে মারাত্মক স্বাস্থ্যঝুঁকি তৈরি করে। ২. সম্পূর্ণ নিউট্রালাইজ না হলে কাপড়ে দুর্গন্ধ ও হলদেটে ম্যাঙ্গানিজ দাগ থেকে যায়।',
   },
   {
     id: 'metabisulfite',
     code: 'CHEM-06',
-    nameEn: 'Sodium Metabisulfite (Antichlor & PP Neutralizer)',
-    nameBn: 'সোডিয়াম মেটাবাইসালফাইট (অ্যান্টিক্লোর ও নিউট্রালাইজার)',
-    chemicalFormula: 'Na2S2O5 (or Sodium Thiosulfate)',
-    categoryEn: 'Step 04 • Chemical Neutralization',
-    categoryBn: 'ধাপ ০৪ • ব্লিচ ও পিপি নিষ্ক্রিয়করণ',
-    dosageRange: '2.0 – 5.0 g/L',
-    tempRange: '40°C – 50°C',
+    nameEn: 'Sodium Metabisulfite & Sodium Hyposulfite (Neutralizers)',
+    nameBn: 'সোডিয়াম মেটাবাইসালফাইট ও হাইপোসালফাইট (নিউট্রালাইজার)',
+    chemicalFormula: 'Na2S2O5 (Metabisulfite) / Na2S2O3 (Hyposulfite)',
+    categoryEn: 'Step 04 • Antichlor & PP Whitening Neutralizer',
+    categoryBn: 'ধাপ ০৪ • ব্লিচ ও পিপি নিষ্ক্রিয়করণ (Neutralization)',
+    dosageRange: '3.0 – 5.0 g/L (M:L 1:8 to 1:9)',
+    tempRange: 'Cold to 40°C (5 – 12 min)',
     phRange: 'pH 4.5 – 5.5',
     hazardLevel: 'Medium',
     swatchColor: '#10b981',
     whatItDoesEn:
-      'Acts as a strong reducing agent that neutralizes residual active chlorine after NaOCl bleaching and converts brown manganese dioxide (`MnO2`) from PP spray into soluble colorless salt.',
+      '`Sodium Metabisulfite` reduces brown manganese dioxide (`MnO2`) from PP spray/acid wash into soluble colorless salts and permanently deactivates residual acid cellulase enzymes; `Sodium Hyposulfite` (3 g/L) neutralizes active chlorine after bleach washes.',
     whatItDoesBn:
-      'ক্লোরিন ব্লিচ এবং পিপি স্প্রে করার পর কাপড়ে থেকে যাওয়া ক্ষতিকর অক্সিডাইজার ও বাদামি দাগকে রাসায়নিকভাবে নিষ্ক্রিয় করে কাপড়কে নিরাপদ ও পরিষ্কার করে।',
+      'সোডিয়াম মেটাবাইসালফাইট পিপি স্প্রে ও অ্যাসিড ওয়াশের বাদামি ম্যাঙ্গানিজ ডাই-অক্সাইড (`MnO2`) দাগ দূর করে কাপড় ধবধবে সাদা করে এবং অ্যাসিড এনজাইমকে স্থায়ীভাবে নিষ্ক্রিয় করে; আর সোডিয়াম হাইপোসালফাইট ক্লোরিন ব্লিচ নিষ্ক্রিয় করে।',
     howOperatedEn:
-      'Run for 10–15 minutes at 45°C immediately after draining bleach or after PP spraying; operators test the garment seam with Potassium Iodide (`KI`) starch paper to verify zero residual chlorine.',
+      'Run at M:L 1:8–1:9 for 5–12 minutes at cold to 40°C temperature right after PP washing or chlorine bleaching; verified with Potassium Iodide (`KI`) test paper before softening.',
     howOperatedBn:
-      'ব্লিচ বা পিপি স্প্রের পরপরই ৪৫°C তাপমাত্রায় ১০–১৫ মিনিট ওয়াশ করা হয় এবং পটাশিয়াম আয়োডাইড (KI) পেপার দিয়ে পরীক্ষা করে নিশ্চিত করা হয় যে কাপড়ে কোনো ক্লোরিন অবশিষ্ট নেই।',
+      'পিপি ওয়াশ বা ব্লিচিংয়ের পরপরই ১:৮–১:৯ লিক্যার রেশিওতে ঠান্ডা বা ৪০°C পানিতে ৫–১২ মিনিট চালানো হয় এবং সফটনিংয়ের আগে KI পেপার দিয়ে টেস্ট করা হয়।',
     disadvantagesEn:
-      '1. Releases pungent sulfur dioxide (`SO2`) gas odor if bath is too hot or acidic. 2. Under-dosing leaves residual chlorine that rots sewing threads and causes storage yellowing.',
+      '1. Emits sharp sulfur dioxide (`SO2`) gas odor in hot acidic baths. 2. Insufficient dosage results in post-wash yellowing, bad smell on garments, and tendered seams.',
     disadvantagesBn:
-      '১. অতিরিক্ত গরম বা অ্যাসিডিক পানিতে ঝাঁঝালো সালফার ডাই-অক্সাইড (SO2) গ্যাসের গন্ধ ছড়ায়। ২. পরিমাণ কম হলে কাপড়ে ক্লোরিন থেকে গিয়ে সেলাই পচে যায় ও কাপড় হলুদ হয়ে যায়।',
+      '১. গরম বা অ্যাসিডিক বাথে ঝাঁঝালো সালফার ডাই-অক্সাইড (`SO2`) গ্যাসের গন্ধ বের হয়। ২. পরিমাণে কম দিলে ওয়াশের পর কাপড়ে দুর্গন্ধ থাকে এবং গোডাউনে কাপড় হলুদ হয়ে ছিঁড়ে যায়।',
   },
   {
     id: 'anti-backstain',
     code: 'CHEM-07',
-    nameEn: 'Polymeric Anti-Backstaining Dispersant',
-    nameBn: 'অ্যান্টি-ব্যাকস্টেইনিং ডিসপারসিং এজেন্ট',
-    chemicalFormula: 'Modified Polyacrylic / Ethoxylated Polymer',
-    categoryEn: 'Indigo Suspension & Pocket Protection',
-    categoryBn: 'সাদা পকেট ও ওয়েফট সুরক্ষা',
-    dosageRange: '0.8 – 1.5 g/L',
-    tempRange: '25°C – 60°C',
-    phRange: 'pH 4.5 – 8.0',
+    nameEn: 'Anti-Staining Agent & Non-Ionic Surfactant Detergent',
+    nameBn: 'অ্যান্টি-স্টেইনিং এজেন্ট ও সারফ্যাক্ট্যান্ট ডিটারজেন্ট',
+    chemicalFormula: 'Polyacrylic Dispersant + Ethoxylated Non-Ionic Surfactant',
+    categoryEn: 'Indigo Suspension, Wetting & Pocket Protection',
+    categoryBn: 'সাদা পকেট সুরক্ষা ও ওয়েটিং ডিটারজেন্ট',
+    dosageRange: '0.6 – 1.0 g/L (Anti-Stain) | 0.5 – 1.0 g/L (Detergent)',
+    tempRange: '40°C – 60°C',
+    phRange: 'pH 6.0 – 9.0',
     hazardLevel: 'Low (Bio)',
     swatchColor: '#06b6d4',
     whatItDoesEn:
-      'Encapsulates loose indigo dye particles floating in the wash bath inside hydrophilic micelles so they flush down the drain instead of redepositing onto white cotton pocket bags and weft yarns.',
+      'Surfactant detergents lower water surface tension via hydrophilic heads and hydrophobic tails to emulsify oils/grease, while Anti-Staining agents suspend discharged indigo dye in the bath so it cannot redeposit onto white weft yarns or pocket bags.',
     whatItDoesBn:
-      'ওয়াশের সময় কাপড় থেকে খসে পড়া ভাসমান নীল ইনডিগো কণাগুলোকে ঘিরে রাখে, যাতে সেগুলো সাদা পকেট ব্যাগ, লেবেল বা ভেতরের সাদা সুতায় পুনরায় লেগে না যায়।',
+      'ডিটারজেন্ট পানির সারফেস টেনশন কমিয়ে তেল-ময়লা দূর করে এবং অ্যান্টি-স্টেইনিং এজেন্ট ওয়াশ বাথে খসে পড়া ইনডিগো রঙকে ভাসিয়ে রাখে যাতে তা পুনরায় সাদা পকেট ব্যাগ বা ওয়েফট সুতায় লেগে ব্যাক-স্টেইনিং না ঘটায়।',
     howOperatedEn:
-      'Added directly into the Desizing, Enzyme Stone, and Rinse baths alongside cellulase enzymes to keep liberated dye suspended in the liquor.',
+      'Dosed directly into Desizing (1 g/L), Enzyme Wash (0.6–0.8 g/L), and Stone Wash baths. Note: Anionic and cationic surfactants must never be mixed together in the same bath as they precipitate into an insoluble complex.',
     howOperatedBn:
-      'ডি-সাইজিং, এনজাইম স্টোন ও রিন্স বাথে সরাসরি এনজাইমের সাথে যোগ করা হয়, যাতে খসে পড়া রঙ পানির সাথেই বেরিয়ে যায়।',
+      'ডি-সাইজিং (১ g/L), এনজাইম ওয়াশ (০.৬–০.৮ g/L) এবং স্টোন ওয়াশ বাথে সরাসরি যোগ করা হয়। (সতর্কতা: অ্যানায়নিক এবং ক্যাটায়নিক সারফ্যাক্ট্যান্ট কখনোই এক বাথে মেশানো যাবে না, এতে তলানি পড়ে কার্যকারিতা নষ্ট হয়)।',
     disadvantagesEn:
-      '1. Excess dosage creates heavy foam that cushions stone impact and reduces abrasion contrast. 2. Non-biodegradable synthetic acrylates increase COD load in wastewater.',
+      '1. Over-dosing creates excessive foam that cushions mechanical stone abrasion. 2. Nonylphenol ethoxylates (APEO/NPEO) are restricted by global eco-standards—must use biodegradable alcohol ethoxylates.',
     disadvantagesBn:
-      '১. অতিরিক্ত পরিমাণে দিলে ড্রামে প্রচুর ফেনা তৈরি হয়ে পাথরের ঘর্ষণ কমিয়ে দেয়। ২. সিন্থেটিক পলিমার বর্জ্য পানির সিওডি (COD) মাত্রা বাড়িয়ে দেয়।',
+      '১. অতিরিক্ত দিলে প্রচুর ফেনা তৈরি হয়ে পাথরের ঘর্ষণ কমিয়ে দেয়। ২. ননিলফেনল (APEO/NPEO) পরিবেশের জন্য নিষিদ্ধ হওয়ায় বায়োডিগ্রেডেবল অ্যালকোহল ইথোক্সিলেট ব্যবহার করতে হয়।',
   },
   {
     id: 'silicone-softener',
     code: 'CHEM-08',
-    nameEn: 'Amino-Silicone Softener & DMDHEU 3D Resin',
-    nameBn: 'অ্যামিনো-সিলিকন সফটনার ও ৩ডি রেজিন',
-    chemicalFormula: 'Amino-Polydimethylsiloxane / Low-Formaldehyde Resin',
-    categoryEn: 'Step 06 • Handfeel & 3D Memory Finish',
-    categoryBn: 'ধাপ ০৬ • সফট হ্যান্ডফিল ও ৩ডি ফিনিশ',
-    dosageRange: '2.0 – 4.0 g/L (Softener) | 80–120 g/L (Resin)',
-    tempRange: '35°C – 40°C (Bath) | 155°C (Cure)',
-    phRange: 'pH 5.0 – 5.5 (Slightly Acidic)',
-    hazardLevel: 'Medium',
+    nameEn: 'Flax Softener (Cationic/Non-Ionic) & Amino Micro-Emulsion Silicone',
+    nameBn: 'ফ্ল্যাক্স সফটনার (ক্যাটায়নিক) ও অ্যামিনো-সিলিকন ইমালশন',
+    chemicalFormula: 'Amino-Modified Polysiloxane + Natural Flax / Quaternary Ammonium',
+    categoryEn: 'Step 06 • Silky Handfeel, Lubricity & Anti-Pilling',
+    categoryBn: 'ধাপ ০৬ • সফট হ্যান্ডফিল ও সিলিকন ওয়াশ',
+    dosageRange: '0.6–1.0 g/L Flax/Cationic + 0.4–0.5 g/L Silicone (M:L 1:6)',
+    tempRange: 'Room Temp to 40°C (5 – 20 min)',
+    phRange: 'pH 4.5 – 5.5 (Adjusted with 0.5–0.6 g/L Acetic Acid)',
+    hazardLevel: 'Low (Bio)',
     swatchColor: '#8b5cf6',
     whatItDoesEn:
-      'Silicone micro-emulsion lubricates rough stone-washed cotton fibers for a silky drape, while DMDHEU resin cross-links cellulose chains to freeze 3D whiskers in place.',
+      'Creates an invisible lubricating film on negatively charged cotton fibers, imparting durable softness, elastic handle, anti-pilling, improved tear resistance, and high-speed sewability (preventing needle cutting).',
     whatItDoesBn:
-      'সিলিকন ইমালশন স্টোন ওয়াশে খসখসে হয়ে যাওয়া কাপড়কে মাখনের মতো নরম করে এবং ৩ডি রেজিন কাপড়ের তন্তুগুলোকে ক্রস-লিংক করে স্থায়ী ত্রিমাত্রিক ভাঁজ ধরে রাখে।',
+      'তুলার তন্তুর ওপর অদৃশ্য পিচ্ছিল প্রলেপ তৈরি করে কাপড়কে মাখনের মতো নরম, সিল্কি ও স্থিতিস্থাপক করে; এছাড়া পিলিং রোধ করে, টিয়ার স্ট্রেন্থ বাড়ায় এবং সুইয়ের ঘর্ষণে সুতা কাটা প্রতিরোধ করে।',
     howOperatedEn:
-      'Softener is run in the final 10-minute cold/lukewarm bath (40°C, pH 5.5, no rinse afterward); 3D resin is sprayed locally or dipped after drying and cured at 155°C.',
+      'Applied in the final bath at a strictly LOW liquor ratio (M:L 1:4 to 1:6) with 0.5–0.6 g/L Acetic Acid (pH 4.5–5.5 helps cationic/flax softener exhaust evenly onto fabric) for 5–15 minutes, then unloaded directly to hydro-extractor without rinsing.',
     howOperatedBn:
-      'সফটনার একদম শেষ বাথে ৪০°C তাপমাত্রা ও pH ৫.৫-এ ১০ মিনিট চালিয়ে সরাসরি হাইড্রো ও ড্রাই করা হয় (ধোয়া হয় না); আর রেজিন স্প্রে করে ১৫৫°C ওভেনে বেক করা হয়।',
+      'একদম শেষ বাথে কম লিক্যার রেশিওতে (M:L ১:৪ থেকে ১:৬) ০.৫–০.৬ g/L অ্যাসিটিক অ্যাসিডসহ (pH ৪.৫–৫.৫) ৫–১৫ মিনিট চালিয়ে কোনো রিন্স ছাড়াই সরাসরি হাইড্রো ও ড্রাই করা হয়।',
     disadvantagesEn:
-      '1. Cationic/amino silicones turn white weft yarns yellow if over-dried above 85°C (phenolic yellowing). 2. Silicone buildup repels water and prevents rework/re-dyeing if shade fails QA.',
+      '1. Excess softener causes indigo backstaining and reduces fabric breathability/absorbency. 2. Amino/cationic silicones cause yellowing on white fabrics at high drying heat and can trigger skin allergies.',
     disadvantagesBn:
-      '১. ৮৫°C-এর বেশি তাপে শুকালে অ্যামিনো-সিলিকন কাপড়ের সাদা অংশকে হলুদ (Yellowing) করে ফেলে। ২. সিলিকন দেওয়ার পর শেড মিল না হলে পুনরায় ডাইং বা ওয়াশ করা খুব কঠিন হয়ে পড়ে।',
+      '১. অতিরিক্ত সফটনার দিলে ব্যাক-স্টেইনিং বাড়ে এবং কাপড়ের বাতাস চলাচল ও পানি শোষণ ক্ষমতা কমে যায়। ২. উচ্চ তাপে শুকালে সাদা কাপড়ে হলদে ভাব (Yellowing) আসে এবং পুনরায় ডাইং বা ওয়াশ করা যায় না।',
+  },
+  {
+    id: 'caustic-soda-ash',
+    code: 'CHEM-09',
+    nameEn: 'Caustic Soda (NaOH) & Soda Ash (Na2CO3) Alkali Builders',
+    nameBn: 'কস্টিক সোডা (NaOH) ও সোডা অ্যাশ (Na2CO3) অ্যালকালি',
+    chemicalFormula: 'Sodium Hydroxide (NaOH) & Sodium Carbonate (Na2CO3)',
+    categoryEn: 'Caustic Wash, Pigment Wash & Reactive Dye Fixation',
+    categoryBn: 'কস্টিক ওয়াশ, পিগমেন্ট ফেডিং ও অ্যালকালি মিডিয়াম',
+    dosageRange: '0.8–1.6 g/L NaOH + 1.5–5.0 g/L Soda Ash (or 20 g/L Dyeing)',
+    tempRange: '50°C – 90°C (20 – 60 min)',
+    phRange: 'pH 10.5 – 11.5 (Strongly Alkaline)',
+    hazardLevel: 'Medium',
+    swatchColor: '#eab308',
+    whatItDoesEn:
+      'Introduces a strong alkaline medium that saponifies natural waxes/oils in scouring, strips 20%–30% of surface dye in Caustic/Pigment washes for an aged vintage look, stabilizes bleach baths, and fixes reactive dyes covalently to cotton.',
+    whatItDoesBn:
+      'ওয়াশ বাথে শক্তিশালী ক্ষারীয় মাধ্যম তৈরি করে তেল-চর্বি দূর করে (স্যাপোনিফিকেশন), কস্টিক ও পিগমেন্ট ওয়াশে ২০%–৩০% রঙ তুলে ভিন্টেজ লুক আনে, ব্লিচ বাথের pH নিয়ন্ত্রণ করে এবং রিঅ্যাক্টিভ ডাই ফিক্স করে।',
+    howOperatedEn:
+      'In Pigment/Caustic wash (Lot 80 kg, M:L 1:8, 50–60°C, 20–60 min), 0.8–1.6 g/L Caustic Soda + 0.8 g/L Detergent + 1.5 g/L Soda Ash are run together, followed by mandatory souring neutralization with 1 g/L Acetic Acid for 5 min.',
+    howOperatedBn:
+      'পিগমেন্ট বা কস্টিক ওয়াশে ১:৮ অনুপাতে ৫০°C–৬০°C তাপে ০.৮–১.৬ g/L কস্টিক সোডা, ডিটারজেন্ট ও সোডা অ্যাশ দিয়ে ২০–৬০ মিনিট চালানো হয় এবং শেষে ১ g/L অ্যাসিটিক অ্যাসিড দিয়ে ৫ মিনিট নিউট্রালাইজ (Souring) করা হয়।',
+    disadvantagesEn:
+      '1. Difficult to control shade uniformity; causes yellowing if not neutralized with acid souring. 2. Corrosive to skin/eyes and hydrolyzes polyester or degrades wool/silk if misused.',
+    disadvantagesBn:
+      '১. নিয়ন্ত্রণ করা কঠিন এবং অ্যাসিড দিয়ে ভালোভাবে নিউট্রালাইজ না করলে কাপড় হলুদ হয়ে যায়। ২. শ্রমিকদের ত্বক ও চোখের জন্য ক্ষতিকর এবং উল বা সিল্ক কাপড়কে গলিয়ে নষ্ট করে দেয়।',
+  },
+  {
+    id: 'hydrogen-peroxide-stabilizer',
+    code: 'CHEM-10',
+    nameEn: 'Hydrogen Peroxide (H2O2) & Sodium Silicate Stabilizer',
+    nameBn: 'হাইড্রোজেন পারঅক্সাইড (H2O2) ও স্টেবিলাইজার',
+    chemicalFormula: 'H2O2 (35%–50%) → H+ + HO2- (Perhydroxyl Ion) + Na2SiO3',
+    categoryEn: 'Universal Eco-Bleach & Super White Wash',
+    categoryBn: 'ইউনিভার্সাল পারমানেন্ট ব্লিচ ও সুপার-হোয়াইট ওয়াশ',
+    dosageRange: '4–12 g/L H2O2 + 2–5 g/L Stabilizer (6:1 Ratio)',
+    tempRange: '85°C – 95°C (Requires High Heat)',
+    phRange: 'pH 9.2 – 10.5',
+    hazardLevel: 'Medium',
+    swatchColor: '#38bdf8',
+    whatItDoesEn:
+      'Universal chlorine-free oxidizing agent that liberates perhydroxyl ions (`HO2-`) in alkaline baths to permanently whiten grey cotton fabrics (Super White wash) or gently brighten sulfur/stretch denim without toxic chloramines or antichlor corrosion.',
+    whatItDoesBn:
+      'ক্লোরিন-মুক্ত ইউনিভার্সাল ব্লিচিং এজেন্ট যা ক্ষারীয় মাধ্যমে পার-হাইড্রোক্সিল আয়ন (`HO2-`) তৈরি করে স্থায়ী সাদা রঙ (Super White Wash) দেয় এবং স্ট্রেচ বা সালফার ডেনিমকে নিরাপদে উজ্জ্বল করে।',
+    howOperatedEn:
+      'Requires temperature near boiling (85°C–95°C) with Caustic Soda/Soda Ash and a Peroxide Stabilizer (Sodium Silicate or organic chelator at 6:1 H2O2-to-Stabilizer ratio) to prevent rapid oxygen decomposition. In Super White wash, bleaching is done twice (12% owf then 10% owf) followed by Peroxide Killer / Acetic Acid.',
+    howOperatedBn:
+      '৮৫°C–৯৫°C উচ্চ তাপমাত্রায় কস্টিক সোডা ও স্টেবিলাইজারের (সোডিয়াম সিলিকেট, ৬:১ অনুপাতে) সাথে চালানো হয় যাতে পারঅক্সাইড অকালে ভেঙে না যায়। সুপার হোয়াইট ওয়াশে সর্বোচ্চ সাদা রঙ পেতে দুই ধাপে ব্লিচ করে পারঅক্সাইড কিলার ও অ্যাসিটিক অ্যাসিড দেওয়া হয়।',
+    disadvantagesEn:
+      '1. Without stabilizer or in presence of rust/iron (`Fe`), copper (`Cu`), or manganese catalysts, liberates nascent oxygen radical `[O]` that forms oxycellulose and causes catastrophic pinhole damage. 2. Sodium silicate can leave harsh silicate deposits if not hot-rinsed at 80°C.',
+    disadvantagesBn:
+      '১. স্টেবিলাইজার না দিলে বা পানিতে লোহা (`Fe`) ও তামা (`Cu`) থাকলে ক্যাটালাইটিক বিক্রিয়ায় অক্সিসেলুলোজ তৈরি হয়ে কাপড়ে অসংখ্য ক্ষুদ্র ছিদ্র (Pinhole) হয়ে যায়। ২. সোডিয়াম সিলিকেট গরম পানিতে না ধুলে কাপড় খসখসে হয়ে যায়।',
+  },
+  {
+    id: 'acetic-acid-buffer',
+    code: 'CHEM-11',
+    nameEn: 'Glacial Acetic Acid (CH3COOH) & pH Buffer System',
+    nameBn: 'গ্লেসিয়াল অ্যাসিটিক অ্যাসিড (CH3COOH) ও pH বাফার',
+    chemicalFormula: 'CH3COOH (Weak Organic Acid) + Sodium Acetate Buffer',
+    categoryEn: 'Alkali Souring & Enzyme/Softener pH Control',
+    categoryBn: 'ক্ষার নিষ্ক্রিয়করণ (Souring) ও pH নিয়ন্ত্রণ',
+    dosageRange: '0.5 – 2.0 g/L',
+    tempRange: 'Ambient to 55°C (5 – 15 min)',
+    phRange: 'Target pH 4.5 – 5.5',
+    hazardLevel: 'Low (Bio)',
+    swatchColor: '#14b8a6',
+    whatItDoesEn:
+      'Neutralizes residual caustic soda and soda ash on garments ("souring") after scouring, bleaching, or caustic washes, and maintains the exact acidic pH window (4.5–5.5) required by acid cellulase enzymes and cationic/flax softeners.',
+    whatItDoesBn:
+      'কস্টিক ওয়াশ, স্কোরিং ও ব্লিচিংয়ের পর কাপড়ে থেকে যাওয়া ক্ষারকে নিষ্ক্রিয় (Souring) করে এবং অ্যাসিড এনজাইম ও সফটনার বাথের pH ৪.৫–৫.৫-এ স্থির রাখে।',
+    howOperatedEn:
+      'Added at 0.5–0.6 g/L prior to dosing acid enzyme or flax/cationic softener, or run at 1.0–2.0 g/L for 5–10 minutes in cold/warm water after alkaline peroxide/caustic baths. Safe for cellulose unlike mineral acids (`H2SO4`/`HCl`) which form hydrocellulose and tender cotton.',
+    howOperatedBn:
+      'অ্যাসিড এনজাইম বা সফটনার দেওয়ার আগে ০.৫–০.৬ g/L এবং ক্ষারীয় ওয়াশের পর নিউট্রালাইজেশনের জন্য ১–২ g/L মাত্রায় ৫–১০ মিনিট ব্যবহার করা হয়। খনিজ অ্যাসিডের মতো এটি তুলার সেলুলোজের ক্ষতি করে না।',
+    disadvantagesEn:
+      '1. Concentrated glacial acetic acid has a pungent vinegar smell and is corrosive to skin/mucous membranes before dilution. 2. Over-dosing drops pH below 4.0, causing uneven softener strike or acid odor on dry jeans.',
+    disadvantagesBn:
+      '১. ঘন গ্লেসিয়াল অ্যাসিটিক অ্যাসিডে তীব্র ভিনেগারের গন্ধ থাকে এবং সরাসরি ত্বকে লাগলে ক্ষত হতে পারে। ২. অতিরিক্ত দিলে pH ৪.০-এর নিচে নেমে কাপড়ে অ্যাসিডের গন্ধ থেকে যায়।',
+  },
+  {
+    id: 'edta-sequestering',
+    code: 'CHEM-12',
+    nameEn: 'EDTA Sequestering / Chelating Agent (Water Softening)',
+    nameBn: 'ইডিটিএ (EDTA) সিকোয়েস্টারিং ও চিলেটিং এজেন্ট',
+    chemicalFormula: 'Disodium EDTA (Na2-EDTA, MW 372) / Sodium Hexametaphosphate',
+    categoryEn: 'Water Hardness Control & Metal Ion Chelation',
+    categoryBn: 'খর পানি মৃদুকরণ ও ধাতব আয়ন নিষ্ক্রিয়করণ',
+    dosageRange: '0.5 – 2.0 g/L (Target Water < 50 ppm CaCO3)',
+    tempRange: '25°C – 100°C (All Wet Baths)',
+    phRange: 'pH 4.0 – 11.5',
+    hazardLevel: 'Low (Bio)',
+    swatchColor: '#6366f1',
+    whatItDoesEn:
+      'Forms stable ring complexes (chelates) with heavy metal ions (`Ca2+`, `Mg2+`, `Fe3+`, `Cu2+`) present in hard supply water and raw cotton pectins, preventing insoluble lime-soap scum, tippy/patchy dyeing, enzyme deactivation, and peroxide pinhole damage.',
+    whatItDoesBn:
+      'খর পানিতে থাকা ক্যালসিয়াম (`Ca2+`), ম্যাগনেসিয়াম (`Mg2+`), লোহা (`Fe3+`) ও তামার (`Cu2+`) আয়নের সাথে শক্তিশালী রিং কমপ্লেক্স তৈরি করে সেগুলোকে নিষ্ক্রিয় করে; ফলে সাবানের গাদ (Scum), ছোপ ছোপ ডাইং এবং পারঅক্সাইড পিনহোল ড্যামেজ প্রতিরোধ হয়।',
+    howOperatedEn:
+      'Dosed first into scouring, bleaching, and garment dyeing baths at 0.5–2.0 g/L whenever factory supply water hardness exceeds 50 ppm `CaCO3` (ideal dye-house water standard: <50 dH/ppm hardness, Iron <0.1 mg/L, Copper <0.005 mg/L, pH ~7.8).',
+    howOperatedBn:
+      'ফ্যাক্টরির পানির হার্ডনেস ৫০ পিপিএম (ppm)-এর বেশি হলে স্কোরিং, ব্লিচিং ও ডাইং বাথের শুরুতে ০.৫–২.০ g/L মাত্রায় যোগ করা হয় (ডাই-হাউসের আদর্শ মান: হার্ডনেস <৫০ ppm, আয়রন <০.১ mg/L, কপার <০.০০৫ mg/L)।',
+    disadvantagesEn:
+      '1. EDTA has low biodegradability in ETP effluent compared to modern polyaspartate/gluconate chelators. 2. Cannot strip metal-complex dyes if over-dosed during dyeing.',
+    disadvantagesBn:
+      '১. সাধারণ ইডিটিএ (EDTA) সহজে বায়োডিগ্রেড হয় না। ২. মেটাল-কমপ্লেক্স ডাইংয়ের সময় অতিরিক্ত দিলে রঙের শেড পরিবর্তন করে ফেলতে পারে।',
+  },
+  {
+    id: 'optical-brightener-oba',
+    code: 'CHEM-13',
+    nameEn: 'Optical Brightening Agent (OBA / Fluorescent Whitener)',
+    nameBn: 'অপটিক্যাল ব্রাইটেনিং এজেন্ট (OBA / ফ্লুরোসেন্ট হোয়াইটেনার)',
+    chemicalFormula: 'Stilbene Disulfonic Acid / Coumarin / Pyrazoline Derivatives',
+    categoryEn: 'Super White Wash & High-Contrast Highlight Boost',
+    categoryBn: 'সুপার-হোয়াইট ওয়াশ ও উজ্জ্বলতা বৃদ্ধিকারী',
+    dosageRange: '0.5% owf or 0.5 – 1.0 g/L (M:L 1:7)',
+    tempRange: '40°C – 50°C (5 – 10 min)',
+    phRange: 'pH 6.0 – 8.0',
+    hazardLevel: 'Low (Bio)',
+    swatchColor: '#e0f2fe',
+    whatItDoesEn:
+      'Absorbs invisible short-wavelength ultraviolet (UV) radiation and re-emits it as visible blue/violet light (400–500 nm), counteracting natural yellow cotton undertones to produce a dazzling crisp white in Super White washes and bleached highlights.',
+    whatItDoesBn:
+      'অদৃশ্য আল্ট্রাভায়োলেট (UV) রশ্মি শোষণ করে দৃশ্যমান নীল-বেগুনি আলো হিসেবে প্রতিফলিত করে, যা তুলার স্বাভাবিক হলদেটে ভাব ঢেকে দিয়ে সুপার-হোয়াইট ওয়াশ ও ব্লিচড হাইলাইটে চোখধাঁধানো ধবধবে সাদা উজ্জ্বলতা আনে।',
+    howOperatedEn:
+      'Available in Blue-cast and Red-cast brighteners; run in Step 5 Brightening bath (M:L 1:7, 0.5% owf or 0.6 g/L for 5–10 minutes) after double peroxide bleaching and acetic acid neutralization, right before non-ionic/micro-emulsion silicone softening.',
+    howOperatedBn:
+      'ডাবল পারঅক্সাইড ব্লিচিং ও অ্যাসিটিক অ্যাসিড নিউট্রালাইজেশনের পর ১:৭ লিক্যার রেশিওতে ০.৫% owf বা ০.৬ g/L মাত্রায় ৫–১০ মিনিট চালানো হয় এবং এরপর নন-আয়নিক সফটনার দেওয়া হয়।',
+    disadvantagesEn:
+      '1. Causes metamerism (shade jumps drastically under store UV/D65 light vs. TL84/incandescent light). 2. Gradual loss of brightness on prolonged sunlight exposure; mixing OBA and non-OBA fabric panels ruins garment dyeing.',
+    disadvantagesBn:
+      '১. লাইট বক্সের ভিন্ন আলোতে (UV বনাম D65/TL84) শেড ভিন্ন দেখায় (মেটামেরিজম)। ২. রোদে দীর্ঘদিন থাকলে উজ্জ্বলতা কমে যায় এবং OBA-যুক্ত ও OBA-ছাড়া কাপড়ের প্যানেল একসাথে সেলাই করে গার্মেন্টস ডাইং করলে মারাত্মক শেড ভেরিয়েশন হয়।',
+  },
+  {
+    id: 'cationic-fixer-catanizer',
+    code: 'CHEM-14',
+    nameEn: 'Cationic Dye Fixing Agent, Catanizer & Glauber’s Salt',
+    nameBn: 'ক্যাটায়নিক ডাই ফিক্সিং এজেন্ট, ক্যাটানাইজার ও গ্লুবার সল্ট',
+    chemicalFormula: 'Dicyandiamide-Formaldehyde / Quaternary Ammonium + Na2SO4',
+    categoryEn: 'Garment Dyeing, Tinting & Fastness Lock',
+    categoryBn: 'গার্মেন্টস ডাইং, টিন্টিং ও কালার ফাস্টনেস লক',
+    dosageRange: '1.5–4.5 g/L Fixer (50°C) | 50 g/L Glauber Salt (Dye Exhaust)',
+    tempRange: '50°C – 80°C (10 – 30 min)',
+    phRange: 'pH 5.0 – 6.5 (Fixing)',
+    hazardLevel: 'Medium',
+    swatchColor: '#f43f5e',
+    whatItDoesEn:
+      '`Glauber’s Salt / NaCl` drives dye exhaustion onto cotton; `Catanizer` gives cotton a positive charge so zero-affinity pigments exhaust in Pigment Dyeing; `Cationic Fixing Agent` forms an insoluble large complex with unfixed anionic dye anions inside the fiber to boost wash and wet rubbing fastness.',
+    whatItDoesBn:
+      'গ্লুবার সল্ট (`Na2SO4`) বা লবণ পানিতে থাকা রঙকে সুতার ভেতরে প্রবেশ করায়; ক্যাটানাইজার পিগমেন্ট ডাইংয়ে কাপড় ও রঙের মধ্যে আকর্ষণ তৈরি করে; এবং ক্যাটায়নিক ফিক্সিং এজেন্ট সুতার ভেতরে রঙের অণুর সাথে অদ্রবণীয় যৌগ তৈরি করে ওয়াশ ও রাবিং ফাস্টনেস বৃদ্ধি করে।',
+    howOperatedEn:
+      'In garment dyeing (M:L 1:15), 50 g/L Glauber’s salt + 1.5–2% Reactive dye + 20 g/L Soda ash run at 80°C for 30 min, followed by hot soaping (1 g/L at 60°C for 10 min) and Cationic Fixing (4.5 g/L at 50°C for 10–15 min in slightly acidic bath).',
+    howOperatedBn:
+      'গার্মেন্টস ডাইংয়ে (১:১৫ অনুপাত) ৫০ g/L গ্লুবার সল্ট ও ২০ g/L সোডা অ্যাশসহ ৮০°C তাপে ৩০ মিনিট ডাইং করার পর ৬০°C তাপে সোপিং করা হয় এবং শেষে ৫০°C তাপে ৪.৫ g/L ফিক্সিং এজেন্ট দিয়ে ১০–১৫ মিনিট ট্রিটমেন্ট করা হয়।',
+    disadvantagesEn:
+      '1. Cationic fixers precipitate if mixed with anionic detergents/soaps (must rinse soap thoroughly before fixing). 2. Formaldehyde-based dicyandiamide fixers can release free formaldehyde and slightly lower light fastness.',
+    disadvantagesBn:
+      '১. সোপিংয়ের ডিটারজেন্ট ভালোভাবে না ধুয়ে ক্যাটায়নিক ফিক্সার দিলে বিক্রিয়া করে কাপড়ে দাগ পড়ে। ২. নিম্নমানের ডাইসায়ানডায়ামাইড ফিক্সার থেকে ফরমালডিহাইড মুক্ত হতে পারে এবং লাইট ফাস্টনেস সামান্য কমতে পারে।',
   },
 ];
 
@@ -748,7 +965,7 @@ export interface MerchandiserTipSpec {
   bulkPitfallBn: string;
 }
 
-// 4. Development Merchandiser vs. Bulk Merchandiser Actionable Playbook
+// 4. Development Merchandiser vs. Bulk Merchandiser Actionable Playbook (8 Stages)
 export const DEV_VS_BULK_MERCHANDISER_TIPS: MerchandiserTipSpec[] = [
   {
     id: 'shrinkage-pattern',
@@ -885,6 +1102,87 @@ export const DEV_VS_BULK_MERCHANDISER_TIPS: MerchandiserTipSpec[] = [
     bulkPitfallBn:
       'সবচেয়ে কম বহরের রোলের মাপে সব মার্কার করলে চওড়া রোলগুলোর দুই পাশ দিয়ে ২ ইঞ্চি করে দামি কাপড় ওয়েস্টেজ হয়।',
   },
+  {
+    id: 'garment-dyeing-rfd-control',
+    code: 'TIP-06',
+    stageEn: 'Garment Dyeing (RFD), Overdyeing & Accessory Engineering',
+    stageBn: 'গার্মেন্টস ডাইং (RFD), ওভারডাইং ও অ্যাক্সেসরিজ কন্ট্রোল',
+    domain: 'sewing',
+    devTitleEn: 'RFD Thread, Trim & Grey Cutting Wastage Savings',
+    devTitleBn: 'RFD সুতা, ট্রিমস ও গ্রে-কাটিং ওয়েস্টেজ সাশ্রয়',
+    devActionEn:
+      'For garment-dyed or overdyed styles, specify 100% cotton or core-spun cotton thread, polyester buttons (never nylon/rubber), polyamide zippers, and nickel-alloy hardware. Cutting RFD grey fabric saves 10%–15% dyed fabric wastage.',
+    devActionBn:
+      'গার্মেন্টস ডাইং বা ওভারডাইং স্টাইলের জন্য ১০০% সুতি বা কোর-স্পান সুতা, পলিয়েস্টার বাটন (নাইলন বা রাবার নয়), পলিঅ্যামাইড জিপার ও নিকেল মেটাল বাছাই করুন। গ্রে (RFD) কাপড় কেটে গার্মেন্টস ডাই করলে ১০%–১৫% রঙিন কাপড়ের ওয়েস্টেজ খরচ বাঁচে।',
+    devPitfallEn:
+      'Sewing RFD garments with tight stitch tension leaves white undyed seam tracks underneath the thread after high-temperature rotary dyeing.',
+    devPitfallBn:
+      'সেলাইয়ের সুতার টেনশন বেশি টাইট থাকলে ডাইংয়ের সময় সেলাইয়ের নিচে রঙ ঢুকতে পারে না, ফলে সাদা আন-ডাইড দাগ (White seam mark) থেকে যায়।',
+    bulkTitleEn: 'OBA-Free Panel Segregation & Glauber Salt Dosing',
+    bulkTitleBn: 'OBA-মুক্ত কাপড় বাছাই ও গ্লুবার সল্ট ডোজিং',
+    bulkActionEn:
+      'Never mix fabric rolls treated with Optical Brightener (OBA) and non-OBA rolls in the same garment, and ensure knitting oils/softeners are scoured off before dyeing at 80°C with 50 g/L Glauber salt and 20 g/L Soda ash.',
+    bulkActionBn:
+      'গার্মেন্টস ডাইংয়ের কাটিংয়ে কখনোই OBA-যুক্ত এবং OBA-ছাড়া কাপড়ের প্যানেল মেশাবেন না; এবং ডাইংয়ের আগে কাপড়ের তেল বা সফটনার সম্পূর্ণ স্কোরিং করে তুলে ফেলুন।',
+    bulkPitfallEn:
+      'Residual hydrogen peroxide or chlorine from bleaching reacts with reactive dyes in the drum, causing severe panel-to-panel shade variation and white specks.',
+    bulkPitfallBn:
+      'ব্লিচিংয়ের পর কাপড়ে সামান্য হাইড্রোজেন পারঅক্সাইড বা ক্লোরিন থেকে গেলে ডাইং বাথে রঙ নষ্ট হয়ে প্যানেল-টু-প্যানেল শেড ভেরিয়েশন হয়।',
+  },
+  {
+    id: 'physical-lab-testing-compliance',
+    code: 'TIP-07',
+    stageEn: 'Physical Lab Testing: Tear, Tensile, Abrasion & Pilling',
+    stageBn: 'ফিজিক্যাল ল্যাব টেস্টিং: টিয়ার, টেনসাইল, অ্যাব্রেশন ও পিলিং',
+    domain: 'costing-qa',
+    devTitleEn: 'Pre-Wash vs. Post-Wash Strength Hierarchy Validation',
+    devTitleBn: 'ওয়াশের আগে ও পরে কাপড়ের শক্তি ও পিলিং যাচাই',
+    devActionEn:
+      'Validate base fabric against international lab standards before booking: Tensile Strength (ISO 13934-1, 300×60mm strip), Elmendorf Tear Strength (ISO 13937-1, 100×75mm), Martindale Abrasion (ISO 12947, 38mm specimen), and ICI Box Pilling (ISO 12945-1, Grade 1–5 scale).',
+    devActionBn:
+      'ফ্যাব্রিক বুকিংয়ের আগে আন্তর্জাতিক মান অনুযায়ী ল্যাব টেস্ট নিশ্চিত করুন: টেনসাইল স্ট্রেন্থ (ISO 13934-1), এলমেনডর্ফ টিয়ার স্ট্রেন্থ (ISO 13937-1), মার্টিনডেল অ্যাব্রেশন (ISO 12947) এবং আইসিআই বক্স পিলিং (ISO 12945-1, রেটিং ৪–৫)।',
+    devPitfallEn:
+      'Hand-sanding brush reduces warp tensile strength by up to 56.68% (compared to only 1.31% for CO2 laser and 2.57% for PP spray)—ignoring this causes knee blowouts.',
+    devPitfallBn:
+      'হ্যান্ড স্যান্ডিং ব্রাশে ওয়ার্প সুতার শক্তি ৫৬.৬৮% পর্যন্ত কমে যায় (যেখানে CO2 লেজারে কমে মাত্র ১.৩১%)—তাই হেভি ডিস্ট্রেসড স্টাইলে লেজার ব্যবহার না করলে হাঁটু সহজেই ছিঁড়ে যায়।',
+    bulkTitleEn: 'Destroy Hole Reinforcement & Post-Wash Lab Audit',
+    bulkTitleBn: 'ডেস্ট্রয় হোল রিইনফোর্সমেন্ট ও ফাইনাল ল্যাব অডিট',
+    bulkActionEn:
+      'After manual knife or grinding-pen destroy processes, apply acetic silicone seal to exposed white weft yarns or stitch an internal backing patch so weft threads do not snap during bulk tumble drying.',
+    bulkActionBn:
+      'নাইফ বা গ্রাইন্ডিং পেন দিয়ে ডেস্ট্রয় (Destroy) করার পর সাদা ওয়েফট সুতাগুলোর শক্তি কমে যায়; তাই সুতা ছিঁড়ে যাওয়া রোধে অ্যাসিটিক সিলিকন সিল (Acetic silicon seal) বা ভেতরে ব্যাকিং প্যাচ সেলাই করে দিন।',
+    bulkPitfallEn:
+      'In tensile testing (ISO 13934-1), jaw slippage >2mm or cross-wise tearing in Elmendorf tests invalidates the lab report and delays final inspection release.',
+    bulkPitfallBn:
+      'ল্যাব টেস্টে ক্ল্যাম্প থেকে ২ মিমি-এর বেশি স্লিপ করলে বা ক্রস-ওয়াইজ টিয়ার হলে টেস্ট রিপোর্ট বাতিল হয়ে শিপমেন্ট রিলিজ আটকে যেতে পারে।',
+  },
+  {
+    id: 'water-hardness-ml-ratio-tegewa',
+    code: 'TIP-08',
+    stageEn: 'Water Hardness, M:L Ratio & Pretreatment Absorbency',
+    stageBn: 'পানির হার্ডনেস, M:L রেশিও ও প্রিট্রিটমেন্ট শোষণ পরীক্ষা',
+    domain: 'fabric',
+    devTitleEn: 'TEGEWA Desizing Scale & AATCC 79 Absorbency Spec',
+    devTitleBn: 'TEGEWA ডি-সাইজিং স্কেল ও AATCC 79 শোষণ মানদণ্ড',
+    devActionEn:
+      'Include pretreatment benchmarks in the wash tech pack: Desizing efficiency >90% (TEGEWA Violet Scale rating), Scouring weight loss 4%–8%, AATCC 79 drop absorbency <1 second, and wicking height >30–50 mm in 5 minutes.',
+    devActionBn:
+      'টেক প্যাকে প্রিট্রিটমেন্ট মানদণ্ড উল্লেখ করুন: ডি-সাইজিং এফিসিয়েন্সি ৯০%+ (TEGEWA স্কেল), স্কোরিং ওয়েট লস ৪%–৮%, ড্রপ টেস্টে পানি শোষণ <১ সেকেন্ড (AATCC 79) এবং উইকিং হাইট ৩০–৫০ মিমি।',
+    devPitfallEn:
+      'Improper singeing on uneven guide rollers causes widthways streaks, while over-singeing melts synthetic blend fibers into tiny hard beads that resist dye.',
+    devPitfallBn:
+      'সিঞ্জিং মেশিনে বার্নারের দূরত্ব (৬–৮ মিমি) বা গতি (৫০–১৬০ মি/মিনিট) ঠিক না থাকলে কাপড়ে লম্বালম্বি দাগ পড়ে এবং ব্লেন্ডেড কাপড়ের সিন্থেটিক ফাইবার গলে শক্ত দানার (Molten beads) সৃষ্টি করে।',
+    bulkTitleEn: 'Daily Water Hardness Check (<50 ppm) & Low Softening M:L Ratio',
+    bulkTitleBn: 'দৈনিক পানির হার্ডনেস (<৫০ ppm) ও সফটনিং M:L রেশিও নিয়ন্ত্রণ',
+    bulkActionEn:
+      'Check supply water hardness daily via 0.01M EDTA titration (Eriochrome Black T indicator at pH 10; keep <50 ppm CaCO3), and keep M:L ratio at 1:8–1:10 for washing but lower it to 1:4–1:6 during softening.',
+    bulkActionBn:
+      'প্রতিদিন ওয়াশিং ফ্লোরের পানির হার্ডনেস ইডিটিএ (EDTA) টাইট্রেশনের মাধ্যমে পরীক্ষা করুন (<৫০ ppm রাখা আবশ্যক) এবং মূল ওয়াশে M:L রেশিও ১:৮–১:১০ রাখলেও সফটনিংয়ের সময় ১:৪–১:৬ এ নামিয়ে আনুন।',
+    bulkPitfallEn:
+      'High M:L ratio during softening dilutes the softener and leaves stiff patches, whereas too-low M:L ratio during enzyme/bleach washing causes drum-rubbing washing marks.',
+    bulkPitfallBn:
+      'সফটনিংয়ে পানি বেশি (উচ্চ M:L রেশিও) হলে সফটনার পাতলা হয়ে কাপড় খসখসে থেকে যায়, আবার মূল ওয়াশে পানি অতিরিক্ত কম হলে ড্রামের ঘর্ষণে কাপড়ে ওয়াশিং মার্ক (Washing mark) পড়ে।',
+  },
 ];
 
 /**
@@ -909,4 +1207,5 @@ export function filterMerchandiserTips(
     );
   });
 }
+
 
