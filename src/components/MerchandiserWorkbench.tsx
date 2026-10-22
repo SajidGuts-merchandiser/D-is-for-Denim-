@@ -847,6 +847,9 @@ export const MerchandiserWorkbench: React.FC<MerchandiserWorkbenchProps> = ({ la
           </div>
         </div>
       )}
+
+      {/* Development vs Bulk Merchandiser Playbook */}
+      <MerchandiserPlaybookSection lang={lang} defaultDomain="costing-qa" />
     </div>
   );
 };

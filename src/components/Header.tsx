@@ -8,7 +8,6 @@ import {
   AlertTriangle,
   Award,
   BookOpen,
-  Globe,
 } from 'lucide-react';
 import { Language, TRANSLATIONS } from '../utils/i18n.ts';
 
@@ -29,6 +28,7 @@ interface HeaderProps {
   setSearchQuery: (query: string) => void;
   lang: Language;
   setLang: (lang: Language) => void;
+  onOpenManual?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -38,46 +38,57 @@ export const Header: React.FC<HeaderProps> = ({
   setSearchQuery,
   lang,
   setLang,
+  onOpenManual,
 }) => {
   const t = TRANSLATIONS[lang];
 
   const navItems = [
-    { id: 'fabric' as ActiveTab, label: t.tabs.fabric, icon: Layers, count: lang === 'bn' ? '৫ ধাপ' : '5 Steps' },
-    { id: 'sewing' as ActiveTab, label: t.tabs.sewing, icon: Scissors, count: lang === 'bn' ? '৭ পয়েন্ট' : '7 Points' },
-    { id: 'wash-process' as ActiveTab, label: t.tabs.washProcess, icon: Droplets, count: lang === 'bn' ? 'ওয়েট/ড্রাই' : 'Wet & Dry' },
+    { id: 'fabric' as ActiveTab, label: t.tabs.fabric, icon: Layers, count: lang === 'bn' ? '১০ ধাপ' : '10 Steps' },
+    { id: 'sewing' as ActiveTab, label: t.tabs.sewing, icon: Scissors, count: lang === 'bn' ? 'ভিডিও+৭ মেশিন' : 'Video+7 M/C' },
+    { id: 'wash-process' as ActiveTab, label: t.tabs.washProcess, icon: Droplets, count: lang === 'bn' ? 'মেশিন+কেমিক্যাল' : 'M/C+Chem' },
     { id: 'wash-types' as ActiveTab, label: t.tabs.washTypes, icon: Sparkles, count: lang === 'bn' ? '৮ ওয়াশ' : '8 Washes' },
-    { id: 'calculators' as ActiveTab, label: t.tabs.calculators, icon: Calculator, count: lang === 'bn' ? 'টুলস' : 'Tools' },
+    { id: 'calculators' as ActiveTab, label: t.tabs.calculators, icon: Calculator, count: lang === 'bn' ? 'টুলস+টিপস' : 'Tools+Tips' },
     { id: 'defects' as ActiveTab, label: t.tabs.defects, icon: AlertTriangle, count: lang === 'bn' ? '৮ কিউএ' : '8 QA' },
     { id: 'quiz' as ActiveTab, label: t.tabs.quiz, icon: Award, count: lang === 'bn' ? 'এক্সাম' : 'Exam' },
     { id: 'glossary' as ActiveTab, label: t.tabs.glossary, icon: BookOpen, count: 'A-Z' },
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-indigo-900/40">
-      {/* Top Banner with Selvedge Detail */}
-      <div className="bg-gradient-to-r from-indigo-950 via-slate-900 to-indigo-950 px-4 py-2 text-xs border-b border-indigo-500/20">
+    <header className="sticky top-0 z-40 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800">
+      {/* Top Bar */}
+      <div className="bg-zinc-900/80 px-4 py-2 text-xs border-b border-zinc-800">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-red-600/90 text-white font-mono font-bold text-[10px] tracking-widest shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-red-600/90 text-white font-mono font-bold text-[10px] tracking-widest">
+              <span className="w-1.5 h-1.5 rounded-full bg-white" />
               {t.badgeSelvedge}
             </span>
-            <span className="text-slate-300 hidden sm:inline">
+            <span className="text-zinc-300 hidden sm:inline">
               {lang === 'bn'
-                ? 'গার্মেন্টস ডেনিম মার্চেন্ডাইজার, সোর্সিং স্পেশালিস্ট ও ওয়াশ মাস্টারদের প্রফেশনাল প্ল্যাটফর্ম'
-                : 'Technical Academy for Denim Apparel Merchandisers, Sourcing Specialists & Wash Masters'}
+                ? 'সংক্ষিপ্ত ভিজ্যুয়াল ডেনিম মার্চেন্ডাইজিং, সুয়িং মেশিন ও লন্ড্রি কেমিক্যাল ইঞ্জিনিয়ারিং গাইড'
+                : 'Concise Visual Denim Merchandising, Sewing Machine & Laundry Chemical Engineering Guide'}
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-[11px] text-indigo-300">
+          <div className="flex items-center gap-3 text-[11px] text-zinc-300">
+            {onOpenManual && (
+              <button
+                onClick={onOpenManual}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-zinc-800 hover:bg-amber-500 text-amber-400 hover:text-zinc-950 border border-zinc-700 font-bold text-[11px] transition-all cursor-pointer"
+              >
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>{lang === 'bn' ? 'কুইক রেফারেন্স চার্ট' : 'Quick Reference Charts'}</span>
+              </button>
+            )}
+
             {/* Language Toggle Button */}
-            <div className="flex items-center bg-slate-900 border border-slate-700/80 rounded-lg p-0.5 shadow-xs">
+            <div className="flex items-center bg-zinc-950 border border-zinc-800 rounded-lg p-0.5">
               <button
                 onClick={() => setLang('en')}
                 className={`px-2 py-0.5 rounded-md text-[11px] font-semibold transition-all cursor-pointer ${
                   lang === 'en'
-                    ? 'bg-indigo-600 text-white shadow-xs'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-amber-500 text-zinc-950 font-bold'
+                    : 'text-zinc-400 hover:text-white'
                 }`}
                 title="Switch to English"
               >
@@ -87,8 +98,8 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => setLang('bn')}
                 className={`px-2 py-0.5 rounded-md text-[11px] font-semibold transition-all cursor-pointer ${
                   lang === 'bn'
-                    ? 'bg-indigo-600 text-white shadow-xs'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-amber-500 text-zinc-950 font-bold'
+                    : 'text-zinc-400 hover:text-white'
                 }`}
                 title="বাংলা মোড চালু করুন"
               >
@@ -96,8 +107,8 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
             </div>
 
-            <span className="hidden md:flex items-center gap-1 font-mono">
-              <span className="text-amber-400 font-bold">Standard 3/1 RHT</span> | EIM Certified
+            <span className="hidden lg:flex items-center gap-1 font-mono text-zinc-400">
+              <span className="text-amber-400 font-bold">3x1 RHT</span> · EIM Standard
             </span>
           </div>
         </div>
@@ -108,11 +119,10 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Logo & Brand */}
         <div className="flex items-center gap-3">
           <div className="relative group cursor-pointer" onClick={() => setActiveTab('fabric')}>
-            <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-indigo-600 via-blue-700 to-slate-900 p-0.5 shadow-lg shadow-indigo-600/20 border border-indigo-400/40 flex items-center justify-center">
-              <div className="w-full h-full rounded-[6px] bg-slate-950 flex flex-col items-center justify-center p-1 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:4px_4px]" />
+            <div className="w-11 h-11 rounded-lg bg-zinc-900 p-0.5 border border-zinc-700 flex items-center justify-center">
+              <div className="w-full h-full rounded-[6px] bg-zinc-950 flex flex-col items-center justify-center p-1 relative overflow-hidden">
                 <span className="font-mono text-xs font-black text-amber-400 tracking-tighter">DNM</span>
-                <span className="text-[9px] font-black tracking-widest text-indigo-300">IQ</span>
+                <span className="text-[9px] font-black tracking-widest text-zinc-300">IQ</span>
               </div>
             </div>
             <div className="absolute -bottom-1 -right-1 w-2.5 h-4 bg-red-600 rounded-xs border-r border-white/50" />
@@ -120,14 +130,14 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-xl font-extrabold tracking-tight text-white flex items-center gap-2">
+              <h1 className="text-xl font-extrabold tracking-tight text-zinc-100 flex items-center gap-2">
                 {t.appTitle}
-                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                  {lang === 'bn' ? 'মার্চেন্ডাইজার হাব' : 'Merchandiser Hub'}
+                <span className="text-xs font-mono font-medium text-amber-400">
+                  · {lang === 'bn' ? 'মার্চেন্ডাইজার হাব' : 'Merchandiser Hub'}
                 </span>
               </h1>
             </div>
-            <p className="text-xs text-slate-400 font-medium">
+            <p className="text-xs text-zinc-400 font-medium">
               {t.appSubtitle}
             </p>
           </div>
@@ -140,10 +150,10 @@ export const Header: React.FC<HeaderProps> = ({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={t.searchPlaceholder}
-            className="w-full bg-slate-900/90 text-xs text-slate-200 placeholder-slate-400 px-3.5 py-2 pl-9 rounded-lg border border-slate-700 focus:outline-hidden focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400 transition-all"
+            className="w-full bg-zinc-900 text-xs text-zinc-200 placeholder-zinc-500 px-3.5 py-2 pl-9 rounded-lg border border-zinc-800 focus:outline-hidden focus:border-amber-400 transition-all"
           />
           <svg
-            className="w-4 h-4 text-slate-400 absolute left-3 top-2.5"
+            className="w-4 h-4 text-zinc-500 absolute left-3 top-2.5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -153,7 +163,7 @@ export const Header: React.FC<HeaderProps> = ({
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute right-2.5 top-2 text-slate-400 hover:text-white text-xs"
+              className="absolute right-2.5 top-2 text-zinc-400 hover:text-white text-xs"
             >
               ✕
             </button>
@@ -173,24 +183,24 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => setActiveTab(item.id)}
                 className={`group flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer ${
                   isActive
-                    ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white shadow-md shadow-indigo-600/30'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/70'
+                    ? 'bg-zinc-800 text-amber-400 border border-zinc-700 shadow-xs'
+                    : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/70'
                 }`}
               >
                 <Icon
                   className={`w-3.5 h-3.5 shrink-0 ${
-                    isActive ? 'text-white' : 'text-slate-400 group-hover:text-indigo-400'
+                    isActive ? 'text-amber-400' : 'text-zinc-500 group-hover:text-zinc-300'
                   }`}
                 />
                 <span>{item.label}</span>
                 <span
-                  className={`text-[9px] px-1.5 py-0.2 rounded-full font-mono ${
+                  className={`text-[9px] font-mono ${
                     isActive
-                      ? 'bg-indigo-900/60 text-indigo-100 border border-indigo-400/30'
-                      : 'bg-slate-800 text-slate-400 group-hover:text-slate-300'
+                      ? 'text-zinc-200'
+                      : 'text-zinc-500 group-hover:text-zinc-400'
                   }`}
                 >
-                  {item.count}
+                  · {item.count}
                 </span>
               </button>
             );
