@@ -46,11 +46,11 @@ export function generateTechPackPdf(options: TechPackPdfOptions): jsPDF {
   const margin = 14;
 
   // Colors
-  const primaryNavy = [11, 26, 48]; // #0b1a30
-  const selvedgeRed = [220, 38, 38]; // #dc2626
-  const accentGold = [202, 138, 4]; // #ca8a04
-  const slateDark = [30, 41, 59];
-  const slateLight = [241, 245, 249];
+  const primaryNavy: [number, number, number] = [11, 26, 48]; // #0b1a30
+  const selvedgeRed: [number, number, number] = [220, 38, 38]; // #dc2626
+  const accentGold: [number, number, number] = [202, 138, 4]; // #ca8a04
+  const slateDark: [number, number, number] = [30, 41, 59];
+  const slateLight: [number, number, number] = [241, 245, 249];
 
   // --- HEADER BANNER ---
   doc.setFillColor(primaryNavy[0], primaryNavy[1], primaryNavy[2]);

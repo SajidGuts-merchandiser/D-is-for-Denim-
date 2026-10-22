@@ -221,7 +221,7 @@ const ChemicalVesselGraphic: React.FC<{
 };
 
 export const WashingMachinesAndChemicalsSection: React.FC<WashingMachinesAndChemicalsSectionProps> = ({
-  lang = 'bn',
+  lang = 'en',
 }) => {
   const [selectedMachineIdx, setSelectedMachineIdx] = useState<number>(0);
   const [showVideoPlayer, setShowVideoPlayer] = useState<boolean>(false);

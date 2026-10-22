@@ -17,7 +17,7 @@ interface MerchandiserPlaybookSectionProps {
 }
 
 export const MerchandiserPlaybookSection: React.FC<MerchandiserPlaybookSectionProps> = ({
-  lang = 'bn',
+  lang = 'en',
   defaultDomain = 'all',
 }) => {
   const [selectedDomain, setSelectedDomain] = useState<'all' | MerchandiserTipSpec['domain']>(

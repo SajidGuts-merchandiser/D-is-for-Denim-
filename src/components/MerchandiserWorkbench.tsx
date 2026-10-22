@@ -29,6 +29,7 @@ import {
 import { WASH_TYPES, WashType } from '../data/denimData.ts';
 import { exportAndDownloadTechPackPdf, TechPackPdfOptions } from '../utils/pdfExport.ts';
 import { Language, TRANSLATIONS } from '../utils/i18n.ts';
+import { MerchandiserPlaybookSection } from './MerchandiserPlaybookSection.tsx';
 
 interface MerchandiserWorkbenchProps {
   lang?: Language;
